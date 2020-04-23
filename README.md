@@ -24,3 +24,7 @@ Below are specific requirements we have which cannot be adequately expressed thr
 
 ## Footer
 No sub-navigation is necessary on the secondary navigation in the footer.
+
+## Mock-Up (Annotated)
+
+![Annotated Mock-Up](./front-end-developer-challenge-annotated.jpg)
