@@ -1,4 +1,4 @@
-# Front End Developer Challenge
+# Front-End Developer Challenge
 In this repo you will find a mock-up (in PNG and PSD form), an annotated version of the mock-up, and all the necessary assets (in a separate folder). The design is for a fictitious game called “TitanStar Legends,” and will not be repurposed or otherwise utilized by D&D Beyond – it is only a coding challenge.
 
 Below are specific requirements we have which cannot be adequately expressed through the mock-up.  We ask that you have your assessment completed and returned within 7 days of receiving it. Good luck!
@@ -24,3 +24,7 @@ Below are specific requirements we have which cannot be adequately expressed thr
 
 ## Footer
 No sub-navigation is necessary on the secondary navigation in the footer.
+
+## Mock-Up (Annotated)
+
+![Annotated Mock-Up](./front-end-developer-challenge-annotated.jpg)
