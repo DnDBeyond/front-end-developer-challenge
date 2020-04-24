@@ -3,6 +3,9 @@ In this repo you will find a mock-up (in PNG and PSD form), an annotated version
 
 Below are specific requirements we have which cannot be adequately expressed through the mock-up.  This is not a timed assignment, but it should probably take 4-5 hours. We ask that you have your assessment completed and returned within 7 days of receiving it. Good luck!
 
+## Getting Started
+To get started, fork this repository to your GitHub profile and begin committing to your fork.
+
 ## General Requirements
 - You may not use any existing SCSS (SASS), LESS, or CSS frameworks.
 - You must use SCSS (SASS) to demonstrate competency with the language.
@@ -26,5 +29,7 @@ Below are specific requirements we have which cannot be adequately expressed thr
 No sub-navigation is necessary on the secondary navigation in the footer.
 
 ## Mock-Up (Annotated)
-
 ![Annotated Mock-Up](./front-end-developer-challenge-annotated.jpg)
+
+## Submission
+To submit your challenge, open a PR to this repo and include `dndbeyond-dev` as a reviewer.
