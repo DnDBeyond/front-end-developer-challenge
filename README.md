@@ -1,7 +1,6 @@
 # Front-End Developer Challenge
 In this repo you will find a mock-up and all the necessary assets (in a separate folder). The design is of a tool for a fictitious game called “TitanStar Legends”, and will not be repurposed or otherwise utilized by D&D Beyond – it is only a coding challenge.
 
-
 Below are specific requirements we have which cannot be adequately expressed through the mock-up. This is not a timed assignment, but it should probably take a couple of hours. We ask that you have your assessment completed and returned within 7 days of receiving it. Good luck!
 
 If you feel that you have a personal project that closely resembles this project, send us the repo and we’ll evaluate that project instead. Only your contributions will be evaluated and the project must demonstrate the following competencies with:
@@ -12,6 +11,7 @@ If you feel that you have a personal project that closely resembles this project
 ## General Requirements
 - You may not use any existing SCSS (SASS), LESS, or CSS frameworks.
 - You must use SCSS (SASS) to demonstrate competency with the language.
+- You must host the app on github pages
 
 ## Rune Mastery Loadout Talent Calculator 9000
 Players of TitanStar Legends can spend talent points that they’ve collected on runes within a tree. We need to write a js application that simulates the rune tree within the game so players can replicate their in-game loadouts to share with the TitanStar Legends community.
