@@ -11,6 +11,7 @@ If you feel that you have a personal project that closely resembles this project
 
 ## General Requirements
 - You may not use any existing SCSS (SASS), LESS, or CSS frameworks.
+  - You may use a style reset, or normalize if you wish.
 - You must use SCSS (SASS) to demonstrate competency with the language.
 
 ## Rune Mastery Loadout Talent Calculator 9000
