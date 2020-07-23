@@ -9,7 +9,15 @@ If you feel that you have a personal project that closely resembles this project
 - Using SCSS
 - Creating a stateful JS application
 
-## General Requirements
+## Assessment expectations
+
+Code reviewers will be directed to pay special attention to the following:
+
+- Styles of submission match the provided mock
+- All functionality defined above is present in the submission
+- Code organisation and maintainability
+- If a JS framework is used, are that libraries best practices followed
+- Any novel, or additional features beyond the given scope
 - You may not use any existing SCSS (SASS), LESS, or CSS frameworks.
   - You may use a style reset, or normalize if you wish.
 - You must use SCSS (SASS) to demonstrate competency with the language.
