@@ -1,0 +1,37 @@
+$max-width-breakpoint: 1000px;
+
+.rune-mastery__path {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+
+  @media (max-width: $max-width-breakpoint) {
+    flex-direction: column;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__runes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+    padding: 16px;
+
+    @media (max-width: $max-width-breakpoint) {
+      flex-direction: column;
+    }
+
+    &__divider {
+      background: #1d1f20;
+      padding: 8px;
+      flex-grow: 1;
+
+      &.active {
+        background: #303133;
+      }
+    }
+  }
+}

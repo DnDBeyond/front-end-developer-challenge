@@ -1,0 +1,40 @@
+$runes: boat, cake, chevron, crown, death, snorkel, storm, utensils !default;
+
+.rune-mastery__rune {
+  background: linear-gradient(to bottom, #54545e 50%, #494949 50%);
+  padding: 3px;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    &:not(.disabled) {
+      background: linear-gradient(
+        to bottom,
+        #7aa9e1 50%,
+        #2c3c4f 50% 70%,
+        #7aa9e1
+      );
+    }
+  }
+
+  &__icon {
+    background: #2c3c4f;
+    padding: 3px;
+    height: 50px;
+    width: 50px;
+
+    @each $rune in $runes {
+      &--#{$rune} {
+        background-image: url("../../assets/icons/#{$rune}.png");
+        background-size: cover;
+
+        &:hover,
+        &.active {
+          &:not(.disabled) {
+            background-image: url("../../assets/icons/#{$rune}--active.png");
+          }
+        }
+      }
+    }
+  }
+}

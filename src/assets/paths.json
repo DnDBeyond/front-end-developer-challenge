@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Talent Path 1",
+    "runes": [
+      { "name": "chevron" },
+      { "name": "utensils" },
+      { "name": "cake" },
+      { "name": "crown" }
+    ]
+  },
+  {
+    "name": "Talent Path 2",
+    "runes": [
+      { "name": "boat" },
+      { "name": "snorkel" },
+      { "name": "storm" },
+      { "name": "death" }
+    ]
+  }
+]

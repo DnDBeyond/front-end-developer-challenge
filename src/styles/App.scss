@@ -1,3 +1,18 @@
-.App {
-  text-align: center;
+@import "./components/loadout";
+@import "./components/path";
+@import "./components/rune";
+
+.rune-mastery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1rem;
+  background-image: url("../assets/images/talent-calc-bg.png");
+  background-size: cover;
+  color: #ffffff;
+
+  .disabled {
+    cursor: not-allowed;
+  }
 }
