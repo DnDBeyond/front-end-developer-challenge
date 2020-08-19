@@ -26,7 +26,7 @@ const Rune = ({
       className={classNames({
         "rune-mastery__rune": true,
         active: active,
-        disabled: !active && currentPoints + value >= totalPoints,
+        disabled: !active && currentPoints + value > totalPoints,
       })}
       onClick={handleClick}
       onContextMenu={handleRightClick}
@@ -35,7 +35,7 @@ const Rune = ({
         className={classNames({
           [`rune-mastery__rune__icon rune-mastery__rune__icon--${name}`]: true,
           active: active,
-          disabled: !active && currentPoints + value >= totalPoints,
+          disabled: !active && currentPoints + value > totalPoints,
         })}
       ></div>
     </div>
