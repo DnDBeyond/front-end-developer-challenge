@@ -1,10 +1,11 @@
 # Front-End Developer Challenge
-In this repo you will find a mock-up and all the necessary assets (in a separate folder). The design is of a tool for a fictitious game called “TitanStar Legends”, and will not be repurposed or otherwise utilized by D&D Beyond – it is only a coding challenge.
 
+In this repo you will find a mock-up and all the necessary assets (in a separate folder). The design is of a tool for a fictitious game called “TitanStar Legends”, and will not be repurposed or otherwise utilized by D&D Beyond – it is only a coding challenge.
 
 Below are specific requirements we have which cannot be adequately expressed through the mock-up. This is not a timed assignment, but it should probably take a couple of hours. We ask that you have your assessment completed and returned within 7 days of receiving it. Good luck!
 
 If you feel that you have a personal project that closely resembles this project, send us the repo and we’ll evaluate that project instead. Only your contributions will be evaluated and the project must demonstrate the following competencies with:
+
 - Making an app mobile-friendly/responsive
 - Using SCSS
 - Creating a stateful JS application
@@ -23,9 +24,10 @@ Code reviewers will be directed to pay special attention to the following:
 - You must use SCSS (SASS) to demonstrate competency with the language.
 
 ## Rune Mastery Loadout Talent Calculator 9000
+
 Players of TitanStar Legends can spend talent points that they’ve collected on runes within a tree. We need to write a js application that simulates the rune tree within the game so players can replicate their in-game loadouts to share with the TitanStar Legends community.
 
-![Example](assets/example.png)
+![Example](src/assets/example.png)
 
 - Left click to add points.
 - Right click to remove points.
@@ -33,8 +35,7 @@ Players of TitanStar Legends can spend talent points that they’ve collected on
 - Each item only accounts for one point.
 - Displays current point total
 - The user must select the items in order.
-    - For example: The user may not put a point in the cake without first having put points in the chevrons and the silverware (in that order).
-
+  - For example: The user may not put a point in the cake without first having put points in the chevrons and the silverware (in that order).
 
 ## Available Scripts
 
@@ -60,3 +61,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
+
+### `yarn deploy`
+
+Deploys the content of the `build` folder to ghpages.<br />
+
+To see the app live checkout this link: [ediabal.github.io/front-end-developer-challenge/](https://ediabal.github.io/front-end-developer-challenge/)
