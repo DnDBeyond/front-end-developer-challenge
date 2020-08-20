@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import classNames from "classnames";
 import Rune from "./Rune";
 
@@ -12,14 +12,12 @@ const Path = ({
   /** index for the largest rune selected */
   const [pathIndex, setPathIndex] = useState(0);
 
-  /** updates the path points when the path index is updated */
-  useEffect(() => {
-    updatePathPoints(name, pathIndex);
-  }, [pathIndex]);
-
   /** updates the path index if the given index is within the range of allowed points */
   const updatePathIndex = (index) => {
-    if (currentPoints + index <= totalPoints) setPathIndex(index);
+    if (currentPoints + index <= totalPoints) {
+      setPathIndex(index);
+      updatePathPoints(name, index);
+    }
   };
 
   const renderDivider = (index) => (

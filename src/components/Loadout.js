@@ -5,6 +5,7 @@ import paths from "../assets/paths.json";
 const Loadout = ({ totalPoints = 6 }) => {
   /** the cumulative running total of points */
   const [currentPoints, setCurrentPoints] = useState(0);
+
   /** object representative for points per path initialized with zero for each path */
   const [pathPoints, setPathPoints] = useState(
     paths.reduce((acc, { name }) => {

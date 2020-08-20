@@ -18,7 +18,7 @@ const Rune = ({
   /** handles the right click for a rune */
   const handleRightClick = (e) => {
     e.preventDefault();
-    updatePathIndex(value - 1);
+    if (active) updatePathIndex(value - 1);
   };
 
   return (
