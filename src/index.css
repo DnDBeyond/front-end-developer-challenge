@@ -1,3 +1,20 @@
 * {
   box-sizing: border-box;
 }
+
+.TalentCalculator {
+  height: 200px;
+  width: 500px;
+  background-image: url(./assets/talent-calc-bg.png);
+}
+
+.Talent {
+  height: 50px;
+  width: 50px;
+  background: url(./assets/talent-icons-sprite.png);
+}
+
+.PointTracker {
+  border: 2px solid red;
+  color: white;
+}
