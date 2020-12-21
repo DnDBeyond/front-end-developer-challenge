@@ -18,11 +18,8 @@ li {
   justify-content: space-between;
   color: darkgray;
   font-weight: bold;
-  font-size: .8em; }
-
-.App {
-  display: flex;
-  justify-content: center; }
+  font-size: .8em;
+  margin-bottom: 20px; }
 
 header {
   font-size: 1.2em;
@@ -32,31 +29,41 @@ header {
   justify-content: center;
   align-items: center; }
 
+.App {
+  display: flex;
+  justify-content: center; }
+
+.flex-container {
+  display: flex;
+  justify-content: space-between; }
+
 .TalentCalculator {
   height: 50vh;
   width: 80vw;
   padding: 25px;
   position: relative; }
-  .TalentCalculator .bg-image {
-    height: 50vh;
-    width: 80vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-image: url(./assets/talent-calc-bg.png);
-    background-repeat: repeat;
-    background-position: center;
-    background-size: cover; }
-  .TalentCalculator::after {
-    content: "";
-    height: calc(50vh - 20px);
-    width: calc(80vw - 20px);
-    border: 2px solid rgba(100, 99, 99, 0.603);
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: -1; }
+
+.TalentCalculator .bg-image {
+  height: 50vh;
+  width: 80vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  background-image: url(./assets/talent-calc-bg.png);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover; }
+
+.TalentCalculator::after {
+  content: "";
+  height: calc(50vh - 20px);
+  width: calc(80vw - 20px);
+  border: 2px solid rgba(100, 99, 99, 0.603);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: -3; }
 
 .TalentPath {
   display: flex; }
@@ -68,20 +75,11 @@ header {
   position: relative;
   margin-right: 50px; }
 
-.Talent::after {
-  content: "";
-  height: 12px;
-  width: 50px;
-  border: 2px solid orange;
-  position: absolute;
-  left: 50px;
-  top: 18px;
-  background-color: gray;
-  border: 2px solid darkgray;
-  z-index: 1;
-  /* Remove this later */ }
+.Talent:hover {
+  background-position-y: 0px !important;
+  /* Possibly revise to not use an !important here*/ }
 
-.Talent.active::after {
+.Talent:not(:last-child).active::after {
   content: "";
   height: 12px;
   width: 50px;
@@ -90,7 +88,32 @@ header {
   position: absolute;
   left: 50px;
   top: 18px;
-  z-index: 2;
+  z-index: -2;
+  /* Remove this later */ }
+
+.Talent.active::before {
+  content: "";
+  height: 56px;
+  width: 56px;
+  background-image: linear-gradient(to bottom, cornflowerblue 50%, darkslategray 40%, cornflowerblue 100%);
+  box-shadow: 0px 0px 7px gray;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  z-index: -1;
+  /* Remove this later */ }
+
+.Talent:not(:last-child)::after {
+  content: "";
+  height: 12px;
+  width: 55px;
+  border: 2px solid orange;
+  position: absolute;
+  left: 45px;
+  top: 18px;
+  background-color: gray;
+  border: 2px solid darkgray;
+  z-index: -2;
   /* Remove this later */ }
 
 .PointTracker {
@@ -100,7 +123,3 @@ header {
   display: flex;
   justify-content: center;
   align-items: center; }
-
-.flex-container {
-  display: flex;
-  justify-content: space-between; }

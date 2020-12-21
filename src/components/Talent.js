@@ -2,20 +2,15 @@ import React from "react";
 import PropTypes from "prop-types"
 
 const Talent = (props) => {
-    // console.log("Props:", props);
     const bgPosition = props.active ? `${props.spriteX}px ${props.spriteY}px` : `${props.spriteX}px ${props.spriteY + 50}px`
-    console.log("Bg positions ", bgPosition)
     return(
-        <div className="TalentWrapper">
-            <div className={ props.active ? "Talent active" : "Talent"}
-                style={{backgroundImage: `url(${props.sprites})`, backgroundPosition: bgPosition}}                    
-                onClick={() => props.setActive(props.path, props.level)}
-                onContextMenu={(e) => {
-                    e.preventDefault();
-                    props.setInactive(props.path, props.level)
-                }}></div>
-            <div className="connection"></div>
-        </div>
+        <div className={ props.active ? "Talent active" : "Talent"}
+            style={{backgroundImage: `url(${props.sprites})`, backgroundPosition: bgPosition}}                    
+            onClick={() => props.setActive(props.path, props.level)}
+            onContextMenu={(e) => {
+                e.preventDefault();
+                props.setInactive(props.path, props.level)
+            }}></div>
     )
 }
 
