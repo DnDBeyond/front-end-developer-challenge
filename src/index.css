@@ -19,6 +19,9 @@
 }
 
 .PointTracker {
-  border: 2px solid red;
   color: white;
+}
+
+.flex-container {
+  display: flex;
 }

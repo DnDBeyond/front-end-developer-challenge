@@ -1,47 +1,77 @@
 import React, { useReducer } from "react";
 import PointTracker from "./PointTracker";
 import TalentPath from "./TalentPath";
-
-const initialState =  { 
-    talents: [
-        [{x: 0, y: 0, active: false}, {x: -50, y: 0, active: false}, {x: -100, y:0, active: false}, {x: -150, y:0, active: false}], 
-        [{x: -200, y: 0, active: false}, {x: -250, y: 0, active: false}, {x: -300, y:0, active: false}, {x: -350, y:0, active: false}]
-    ]
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'SET_TALENT_ACTIVE':
-        state.talents[action.path][action.idx].active = true;
-        return {...state};
-    case 'SET_TALENT_INACTIVE':
-        state.talents[action.path][action.idx].active = false;
-        return {...state};    default:
-      throw new Error();
-  }
-}
+import { talentCalculatorReducer, initialState } from "../store/reducer";
 
 // TalentCalculator is a composite component that holds the parent state and passes it down
 // along with callbacks to the child components
 const TalentCalculator = () => { 
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(talentCalculatorReducer, initialState);
 
+    function canSetActive(state, path, level, availablePoints) {
+        const firstIsInactive = (level === 0 && !state.talents[path][0].active);
+        const previousIsActive = (level > 0 && state.talents[path][level - 1].active);
+        const talentIsInactive = (!state.talents[path][level].active)
+        const hasAvailablePoints = (state.availablePoints > 0);
+        // Handle first talent
+        if ((firstIsInactive || previousIsActive) && talentIsInactive && hasAvailablePoints) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function canSetInactive(state, path, level) {
+        // Handle last talent
+        const p = state[path];
+        const lastIsActive = (level === p.length - 1 && p[p.length - 1].active);
+        const previousIsActive = (level < p.length - 1 && !state[path][level + 1].active);
+        const talentIsActive = (state[path][level].active)
+        if ((lastIsActive || previousIsActive) && talentIsActive) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function activateTalent(path, level) {
+        if (canSetActive(state, path, level)) {
+            dispatch({type: 'SET_TALENT_ACTIVE', path, level})
+        } else if (state.points === 0) {
+            console.log("You do not have any talent points available!")
+        } else {
+            // Show user feedback
+            console.log("You are not a high enough level yet!")
+        };   
+    }
+
+    function deactivateTalent(path, level) {
+        if (canSetInactive(state.talents, path, level)) {
+            dispatch({type: 'SET_TALENT_INACTIVE', path, level})
+        } else {
+            // Show user feedback
+            console.log("You cannot remove this talent until you remove a higher level talent first!")
+        };   
+    }
     return(
     <div className="TalentCalculator">
         <div>TitanStar Legends - Rune Mastery Talent Calculator 9000</div>
-        { 
-            state.talents.map((spriteCoord, pathIdx) => {
-                return <TalentPath
-                    key={pathIdx}
-                    path={pathIdx}
-                    talents={state.talents}
-                    spriteCoords={spriteCoord} 
-                    setActive={(idx) => dispatch({type: 'SET_TALENT_ACTIVE', path: pathIdx, idx})}
-                    setInactive={(idx) => dispatch({type: 'SET_TALENT_INACTIVE', path: pathIdx, idx})}/>
-            })
-        }
-        {/* TODO: Add point tracking to its own component */}
-        <PointTracker/>
+        <div className="flex-container">
+            <div>
+                { 
+                    state.talents.map((spriteCoord, pathIdx) => {
+                        return <TalentPath
+                            key={pathIdx}
+                            path={pathIdx}
+                            talents={state.talents}
+                            spriteCoords={spriteCoord} 
+                            setActive={activateTalent}
+                            setInactive={deactivateTalent}/>
+                    })
+                }
+            </div>
+                <PointTracker points={state.availablePoints}/>
+        </div>
     </div>
     )
 }
