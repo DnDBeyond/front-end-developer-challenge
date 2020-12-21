@@ -22,14 +22,21 @@ function reducer(state, action) {
   }
 }
 
-const TalentCalculator = () => {
+const TalentCalculator = () => { 
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return(
     <div className="TalentCalculator">
         <div>TitanStar Legends - Rune Mastery Talent Calculator 9000</div>
-        <TalentPath spriteCoords={state.spriteCoords[0]} setActive={(idx) => dispatch({type: 'SET_TALENT_ACTIVE', path: 0, idx})}/>
-        <TalentPath spriteCoords={state.spriteCoords[1]} setActive={(idx) => dispatch({type: 'SET_TALENT_INACTIVE', path: 1, idx})}/>
+        { 
+            state.spriteCoords.map((spriteCoord, coordIdx) => {
+                return <TalentPath
+                    key={coordIdx}
+                    spriteCoords={spriteCoord} 
+                    setActive={(idx) => dispatch({type: 'SET_TALENT_ACTIVE', path: coordIdx, idx})}
+                    setInactive={(idx) => dispatch({type: 'SET_TALENT_INACTIVE', path: coordIdx, idx})}/>
+            })
+        }
         {/* TODO: Add point tracking to its own component */}
         <PointTracker/>
     </div>
