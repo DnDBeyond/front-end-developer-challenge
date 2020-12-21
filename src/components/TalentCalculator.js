@@ -55,22 +55,25 @@ const TalentCalculator = () => {
     }
     return(
     <div className="TalentCalculator">
-        <div>TitanStar Legends - Rune Mastery Talent Calculator 9000</div>
+        <div className="bg-image"></div>
+        <header>TitanStar Legends - Rune Mastery Talent Calculator 9000</header>
         <div className="flex-container">
-            <div>
-                { 
-                    state.talents.map((spriteCoord, pathIdx) => {
-                        return <TalentPath
-                            key={pathIdx}
-                            path={pathIdx}
-                            talents={state.talents}
-                            spriteCoords={spriteCoord} 
-                            setActive={activateTalent}
-                            setInactive={deactivateTalent}/>
-                    })
-                }
-            </div>
-                <PointTracker points={state.availablePoints}/>
+            <ul>
+            { 
+                state.talents.map((spriteCoord, pathIdx) => {
+                    return <li key={pathIdx}>
+                                <label>TALENT PATH {pathIdx + 1}</label>
+                                <TalentPath
+                                    path={pathIdx}
+                                    talents={state.talents}
+                                    spriteCoords={spriteCoord} 
+                                    setActive={activateTalent}
+                                    setInactive={deactivateTalent}/>
+                            </li>
+                })
+            }
+            </ul>
+            <PointTracker points={state.availablePoints}/>
         </div>
     </div>
     )
