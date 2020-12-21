@@ -8,6 +8,10 @@
   background-image: url(./assets/talent-calc-bg.png);
 }
 
+.TalentPath {
+  display: flex;
+}
+
 .Talent {
   height: 50px;
   width: 50px;
