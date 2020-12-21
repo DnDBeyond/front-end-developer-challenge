@@ -8,7 +8,7 @@ const TalentPath = (props) => {
         {
             props.spriteCoords.map((spriteCoord, idx) => (
             <Talent key={idx}
-                onClick={() => props.setActive(idx)}
+                setActive={() => props.setActive(idx)}
                 sprites={sprites} 
                 active={spriteCoord.active}
                 spriteX={spriteCoord.x} 
