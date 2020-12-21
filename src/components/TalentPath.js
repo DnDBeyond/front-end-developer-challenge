@@ -9,8 +9,11 @@ const TalentPath = (props) => {
         {
             props.spriteCoords.map((spriteCoord, idx) => (
             <Talent key={idx}
+                level={idx}
                 setActive={() => props.setActive(idx)}
                 setInactive={() => props.setInactive(idx)}
+                talents={props.talents}
+                path={props.path}
                 sprites={sprites} 
                 active={spriteCoord.active}
                 spriteX={spriteCoord.x} 
@@ -22,6 +25,8 @@ const TalentPath = (props) => {
 }
 
 TalentPath.propTypes = {
+    talents: PropTypes.array.isRequired,
+    path: PropTypes.number.isRequired,
     setActive: PropTypes.func.isRequired,
     setInactive: PropTypes.func.isRequired,
     spriteCoords: PropTypes.array.isRequired
