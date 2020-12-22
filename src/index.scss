@@ -1,8 +1,11 @@
-$lightFontColor: #fefefe;
-$darkFontColor: #2d4051;
-$gray: gray;
-$darkGray: darkgray;
+$light-font-color: #fefefe;
+$dark-font-color: #2d4051;
 $connectionSize: 110px;
+$inactive-gray: #1a1d1f;
+$inactive-light-gray: #1e2123;
+$active-gray:  #313234;
+$active-light-gray: #393d3f;
+
 
 * {
     box-sizing: border-box;
@@ -35,8 +38,8 @@ li {
 
 header {
     font-size: 1.7em;
-    background-color: rgba(61, 61, 61, 0.247);
-    color: white;
+    background-color: rgba(61, 61, 61, 0.534);
+    color: #d4d1d1;
     padding: 5px;
     display: flex;
     justify-content: center;
@@ -62,7 +65,7 @@ h2 {
 }
 
 .dark-gray {
-    color: $darkFontColor;
+    color: $dark-font-color;
 }
 
 .App {
@@ -112,28 +115,6 @@ h2 {
     &:hover {
         background-position-y: 0px !important; /* Possibly revise to not use an !important here*/
     }
-    &:not(:last-child).active::after {
-        content: "";
-        height: 12px;
-        width:  $connectionSize;
-        border: 2px solid #393d3f;
-        background-color: #313234;
-        position: absolute;
-        left: 50px;
-        top: 18px;
-        z-index: -2; /* Remove this later */
-    }
-    &.active::before {
-        content: "";
-        height: 56px;
-        width: 56px;
-        background-image: linear-gradient(to bottom, cornflowerblue 50%, $darkFontColor 40%,  cornflowerblue 100%);
-        box-shadow: 0px 0px 7px gray;
-        position: absolute;
-        left: -3px;
-        top: -3px;
-        z-index: -1; /* Remove this later */
-    }
     &:not(:last-child)::after {
         content: "";
         height: 12px;
@@ -141,13 +122,46 @@ h2 {
         position: absolute;
         left: 45px;
         top: 18px;
-        background-color: #1a1d1f;
-        border: 2px solid #393d3f;
+        background-color:$inactive-gray;
+        border: 1px solid $inactive-light-gray;
         z-index: -2; /* Remove this later */
+    }
+    &:not(:last-child).active::after {
+        content: "";
+        height: 12px;
+        width:  $connectionSize;
+        border: 2px solid $active-light-gray;
+        background-color: $active-gray;
+        position: absolute;
+        left: 50px;
+        top: 18px;
+        z-index: -2; /* Remove this later */
+    }
+    &::before {
+        content: "";
+        height: 56px;
+        width: 56px;
+        background-image: linear-gradient(to bottom,$active-light-gray 50%, $active-gray 40%,  $active-light-gray 100%);
+        box-shadow: 0px 0px 0px 1px  $inactive-light-gray;
+        position: absolute;
+        left: -3px;
+        top: -3px;
+        z-index: -1; /* Remove this later */
+    }
+    &.active::before {
+        content: "";
+        height: 56px;
+        width: 56px;
+        background-image: linear-gradient(to bottom, cornflowerblue 50%, $dark-font-color 40%,  cornflowerblue 100%);
+        box-shadow: 0px 0px 7px gray;
+        position: absolute;
+        left: -3px;
+        top: -3px;
+        z-index: -1; /* Remove this later */
     }
 }
 .PointTracker {
-    color: $lightFontColor;
+    color: $light-font-color;
     border: 1px solid #101214;
     display: flex;
     flex-direction: column;
