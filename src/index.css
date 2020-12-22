@@ -1,3 +1,182 @@
 * {
   box-sizing: border-box;
-}
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+li {
+  margin: 30px 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  color: darkgray;
+  font-weight: bold;
+  font-size: .8em; }
+  li label {
+    margin-right: 4em; }
+
+header {
+  font-size: 1.7em;
+  background-color: rgba(61, 61, 61, 0.247);
+  color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px; }
+
+h2 {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300; }
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; }
+
+.centered-text {
+  text-align: center; }
+
+.dark-gray {
+  color: #2d4051; }
+
+.TalentCalculator {
+  max-width: 950px;
+  padding: 25px;
+  position: relative; }
+  .TalentCalculator .bg-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    background-image: url(./assets/talent-calc-bg.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover; }
+  .TalentCalculator::after {
+    content: "";
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    border: 2px solid rgba(100, 99, 99, 0.603);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: -3; }
+
+.TalentPath {
+  display: flex; }
+
+.Talent {
+  height: 50px;
+  width: 50px;
+  background: url(./assets/talent-icons-sprite.png);
+  position: relative; }
+  .Talent:not(:last-child) {
+    margin-right: 105px; }
+  .Talent:hover {
+    background-position-y: 0px !important;
+    /* Possibly revise to not use an !important here*/ }
+  .Talent:not(:last-child).active::after {
+    content: "";
+    height: 12px;
+    width: 110px;
+    border: 2px solid #393d3f;
+    background-color: #313234;
+    position: absolute;
+    left: 50px;
+    top: 18px;
+    z-index: -2;
+    /* Remove this later */ }
+  .Talent.active::before {
+    content: "";
+    height: 56px;
+    width: 56px;
+    background-image: linear-gradient(to bottom, cornflowerblue 50%, #2d4051 40%, cornflowerblue 100%);
+    box-shadow: 0px 0px 7px gray;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    z-index: -1;
+    /* Remove this later */ }
+  .Talent:not(:last-child)::after {
+    content: "";
+    height: 12px;
+    width: 110px;
+    position: absolute;
+    left: 45px;
+    top: 18px;
+    background-color: #1a1d1f;
+    border: 2px solid #393d3f;
+    z-index: -2;
+    /* Remove this later */ }
+
+.PointTracker {
+  color: #fefefe;
+  border: 1px solid #101214;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 15px;
+  background-color: #0000005b; }
+
+@media only screen and (max-width: 920px) {
+  header {
+    margin-bottom: 10px; }
+  .TalentCalculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .TalentPath {
+    flex-direction: column-reverse; }
+  .Talent {
+    flex-direction: column;
+    margin-top: 50px; }
+    .Talent:last-child {
+      margin-bottom: 0;
+      margin-top: 0; }
+    .Talent:not(:last-child) {
+      margin-right: 0; }
+    .Talent:not(:last-child).active::after, .Talent:not(:last-child)::after {
+      content: "";
+      height: 110px;
+      width: 12px;
+      position: absolute;
+      left: 18px;
+      top: -100px; }
+  ul {
+    flex-direction: row; }
+  li {
+    flex-direction: column-reverse; }
+    li:first-child {
+      margin-right: 50px; }
+    li label {
+      margin-right: 0;
+      margin-top: 20px; }
+  .flex-container {
+    display: flex;
+    align-items: center; }
+  .PointTracker {
+    margin-left: 50px; } }
+
+@media only screen and (max-width: 550px) {
+  .flex-container {
+    display: block; }
+  .PointTracker {
+    margin-left: 0; }
+  header {
+    font-size: 1.5em; } }
