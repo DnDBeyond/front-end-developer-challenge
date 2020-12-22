@@ -46,6 +46,8 @@ header {
 
 h2 {
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
 }
 
 .flex-container {
@@ -114,8 +116,8 @@ h2 {
         content: "";
         height: 12px;
         width:  $connectionSize;
-        border: 2px solid gray;
-        background-color: darkgray;
+        border: 2px solid #393d3f;
+        background-color: #313234;
         position: absolute;
         left: 50px;
         top: 18px;
@@ -139,8 +141,8 @@ h2 {
         position: absolute;
         left: 45px;
         top: 18px;
-        background-color: gray;
-        border: 2px solid darkgray;
+        background-color: #1a1d1f;
+        border: 2px solid #393d3f;
         z-index: -2; /* Remove this later */
     }
 }
@@ -153,14 +155,14 @@ h2 {
     align-items: center;
     height: 100%;
     padding: 15px;
-    background-color: #00000011;
+    background-color: #0000005b;
 }
 
 //Breakpoint at 920
 
 @media only screen and (max-width: 920px) {
     header {
-        margin-bottom: 40px;
+        margin-bottom: 10px;
     }
     .TalentCalculator {
         display: flex;
