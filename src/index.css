@@ -6,46 +6,58 @@
 ul {
   margin: 0;
   padding: 0;
-  width: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 li {
   margin: 0;
   padding: 0;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  align-items: center;
   color: darkgray;
   font-weight: bold;
   font-size: .8em;
   margin-bottom: 20px; }
 
+li label {
+  margin-right: 4em; }
+
 header {
-  font-size: 1.2em;
+  font-size: 1.7em;
+  background-color: rgba(61, 61, 61, 0.247);
   color: white;
   padding: 5px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 60px; }
 
-.App {
-  display: flex;
-  justify-content: center; }
+h2 {
+  margin: 0; }
 
 .flex-container {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; }
+
+.centered-text {
+  text-align: center; }
+
+.dark-gray {
+  color: darkslategray; }
 
 .TalentCalculator {
-  height: 50vh;
-  width: 80vw;
+  max-width: 950px;
   padding: 25px;
   position: relative; }
 
 .TalentCalculator .bg-image {
-  height: 50vh;
-  width: 80vw;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -57,8 +69,8 @@ header {
 
 .TalentCalculator::after {
   content: "";
-  height: calc(50vh - 20px);
-  width: calc(80vw - 20px);
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
   border: 2px solid rgba(100, 99, 99, 0.603);
   position: absolute;
   top: 10px;
@@ -73,7 +85,7 @@ header {
   width: 50px;
   background: url(./assets/talent-icons-sprite.png);
   position: relative;
-  margin-right: 50px; }
+  margin-right: 100px; }
 
 .Talent:hover {
   background-position-y: 0px !important;
@@ -82,7 +94,7 @@ header {
 .Talent:not(:last-child).active::after {
   content: "";
   height: 12px;
-  width: 50px;
+  width: 110px;
   border: 2px solid gray;
   background-color: darkgray;
   position: absolute;
@@ -106,8 +118,7 @@ header {
 .Talent:not(:last-child)::after {
   content: "";
   height: 12px;
-  width: 55px;
-  border: 2px solid orange;
+  width: 110px;
   position: absolute;
   left: 45px;
   top: 18px;
@@ -117,9 +128,56 @@ header {
   /* Remove this later */ }
 
 .PointTracker {
-  color: white;
-  width: 150px;
-  height: 80px;
+  color: #fefefe;
+  border: 2px solid gray;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  height: 100%;
+  padding: 15px;
+  background-color: #00000011; }
+
+@media only screen and (max-width: 900px) {
+  .TalentCalculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .TalentPath {
+    flex-direction: column; }
+  .Talent {
+    flex-direction: column;
+    margin-right: 0;
+    margin-bottom: 50px; }
+  .Talent:last-child {
+    margin-bottom: 0; }
+  .Talent:not(:last-child).active::after, .Talent:not(:last-child)::after {
+    content: "";
+    height: 110px;
+    width: 12px;
+    position: absolute;
+    left: 18px;
+    top: calc($connectionSize - 10px); }
+  ul {
+    flex-direction: row; }
+  li {
+    flex-direction: column; }
+  li:first-child {
+    margin-right: 50px; }
+  li label {
+    margin-right: 0;
+    margin-bottom: 20px; }
+  .flex-container {
+    display: flex;
+    align-items: center; }
+  .PointTracker {
+    margin-left: 50px; } }
+
+@media only screen and (max-width: 500px) {
+  .flex-container {
+    display: block; }
+  .PointTracker {
+    margin-left: 0; }
+  header {
+    font-size: 1.5em; } }

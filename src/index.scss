@@ -1,16 +1,22 @@
+$lightFontColor: #fefefe;
+$darkFontColor: darkslategray;
+$gray: gray;
+$darkGray: darkgray;
+$connectionSize: 110px;
+
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
-    // border: 1px solid red
 }
 
 ul {
     margin: 0;
     padding: 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 li {
@@ -18,40 +24,56 @@ li {
     padding: 0;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    align-items: center;
     color: darkgray;
     font-weight: bold;
     font-size: .8em;
     margin-bottom: 20px;
+    label {
+        margin-right: 4em;
+    }
 }
 
 header {
-    font-size: 1.2em;
+    font-size: 1.7em;
+    background-color: rgba(61, 61, 61, 0.247);
     color: white;
     padding: 5px;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    margin-bottom: 60px;
 }
 
-.App {
-    display: flex;
-    justify-content: center; 
+h2 {
+    margin: 0;
 }
 
 .flex-container {
     display: flex; 
     justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.dark-gray {
+    color: $darkFontColor;
+}
+
+.App {
 }
 
 .TalentCalculator {
-    height: 50vh;
-    width: 80vw;
+    max-width: 950px;
     padding: 25px;
     position: relative;
     .bg-image {
-        height: 50vh;
-        width: 80vw;
+        height: 100%;
+        width: 100%;
         position: absolute;
         top: 0;
         left: 0;
@@ -61,11 +83,11 @@ header {
         background-position: center;
         background-size: cover;
     }
-
+    
     &::after {
         content: "";
-        height: calc(50vh - 20px);
-        width: calc(80vw - 20px);
+        height: calc(100% - 20px);
+        width: calc(100% - 20px);
         border: 2px solid rgba(100, 99, 99, 0.603);
         position: absolute;
         top: 10px;
@@ -83,14 +105,14 @@ header {
     width: 50px;
     background: url(./assets/talent-icons-sprite.png);
     position: relative;
-    margin-right: 50px;
+    margin-right: 100px;
     &:hover {
         background-position-y: 0px !important; /* Possibly revise to not use an !important here*/
     }
     &:not(:last-child).active::after {
         content: "";
         height: 12px;
-        width: 50px;
+        width:  $connectionSize;
         border: 2px solid gray;
         background-color: darkgray;
         position: absolute;
@@ -102,7 +124,7 @@ header {
         content: "";
         height: 56px;
         width: 56px;
-        background-image: linear-gradient(to bottom, cornflowerblue 50%, darkslategray 40%,  cornflowerblue 100%);
+        background-image: linear-gradient(to bottom, cornflowerblue 50%, $darkFontColor 40%,  cornflowerblue 100%);
         box-shadow: 0px 0px 7px gray;
         position: absolute;
         left: -3px;
@@ -112,8 +134,7 @@ header {
     &:not(:last-child)::after {
         content: "";
         height: 12px;
-        width: 55px;
-        border: 2px solid orange;
+        width: $connectionSize;
         position: absolute;
         left: 45px;
         top: 18px;
@@ -123,11 +144,78 @@ header {
     }
 }
 .PointTracker {
-    color: white;
-    width: 150px;
-    height: 80px;
+    color: $lightFontColor;
+    border: 2px solid gray;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    height: 100%;
+    padding: 15px;
+    background-color: #00000011;
 }
 
+//Breakpoint at 900
+
+@media only screen and (max-width: 900px) {
+    .TalentCalculator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .TalentPath {
+        flex-direction: column;;
+    }
+    .Talent {
+        flex-direction: column;
+        margin-right: 0;
+        margin-bottom: 50px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:not(:last-child).active::after , &:not(:last-child)::after {
+            content: "";
+            height: $connectionSize;
+            width: 12px;
+            position: absolute;
+            left: 18px;
+            top: calc($connectionSize - 10px);
+        }
+    }
+    ul {
+        flex-direction: row;
+    }
+    
+    li {
+        flex-direction:  column;
+        &:first-child{
+            margin-right: 50px;
+        }
+        label {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .PointTracker {
+        margin-left: 50px;
+    }
+}
+
+
+// Breakpoint at 500
+@media only screen and (max-width: 500px) {
+    .flex-container {
+        display: block;
+    }
+    .PointTracker {
+        margin-left: 0;
+    }
+    header {
+        font-size: 1.5em;
+    }
+}

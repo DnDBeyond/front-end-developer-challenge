@@ -56,7 +56,7 @@ const TalentCalculator = () => {
     return(
     <div className="TalentCalculator">
         <div className="bg-image"></div>
-        <header>TitanStar Legends - Rune Mastery Talent Calculator 9000</header>
+        <header className="centered-text">TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000</header>
         <div className="flex-container">
             <ul>
             { 
