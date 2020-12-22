@@ -1,5 +1,5 @@
 $lightFontColor: #fefefe;
-$darkFontColor: darkslategray;
+$darkFontColor: #2d4051;
 $gray: gray;
 $darkGray: darkgray;
 $connectionSize: 110px;
@@ -20,7 +20,7 @@ ul {
 }
 
 li {
-    margin: 0;
+    margin: 30px 0;
     padding: 0;
     display: flex;
     width: 100%;
@@ -28,7 +28,6 @@ li {
     color: darkgray;
     font-weight: bold;
     font-size: .8em;
-    margin-bottom: 20px;
     label {
         margin-right: 4em;
     }
@@ -105,7 +104,9 @@ h2 {
     width: 50px;
     background: url(./assets/talent-icons-sprite.png);
     position: relative;
-    margin-right: 100px;
+    &:not(:last-child) {
+        margin-right: 105px;
+    }
     &:hover {
         background-position-y: 0px !important; /* Possibly revise to not use an !important here*/
     }
@@ -145,7 +146,7 @@ h2 {
 }
 .PointTracker {
     color: $lightFontColor;
-    border: 2px solid gray;
+    border: 1px solid #101214;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,9 +156,12 @@ h2 {
     background-color: #00000011;
 }
 
-//Breakpoint at 900
+//Breakpoint at 920
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 920px) {
+    header {
+        margin-bottom: 40px;
+    }
     .TalentCalculator {
         display: flex;
         flex-direction: column;
@@ -165,14 +169,17 @@ h2 {
         align-items: center;
     }
     .TalentPath {
-        flex-direction: column;;
+        flex-direction: column-reverse;
     }
     .Talent {
         flex-direction: column;
-        margin-right: 0;
-        margin-bottom: 50px;
+        margin-top: 50px;
         &:last-child {
             margin-bottom: 0;
+            margin-top: 0;
+        }
+        &:not(:last-child) {
+            margin-right: 0;
         }
         &:not(:last-child).active::after , &:not(:last-child)::after {
             content: "";
@@ -180,7 +187,7 @@ h2 {
             width: 12px;
             position: absolute;
             left: 18px;
-            top: calc($connectionSize - 10px);
+            top: -100px;
         }
     }
     ul {
@@ -188,13 +195,13 @@ h2 {
     }
     
     li {
-        flex-direction:  column;
+        flex-direction:  column-reverse;
         &:first-child{
             margin-right: 50px;
         }
         label {
             margin-right: 0;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
     }
     .flex-container {
@@ -207,8 +214,8 @@ h2 {
 }
 
 
-// Breakpoint at 500
-@media only screen and (max-width: 500px) {
+// Breakpoint at 550
+@media only screen and (max-width: 550px) {
     .flex-container {
         display: block;
     }
