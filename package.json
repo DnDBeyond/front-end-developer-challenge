@@ -1,0 +1,39 @@
+{
+  "name": "dnd-beyond-challenge",
+  "version": "1.0.0",
+  "description": "D&D Beyond Code Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliwojo/front-end-developer-challenge.git"
+  },
+  "author": "Ali Wojcikiewicz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliwojo/front-end-developer-challenge/issues"
+  },
+  "homepage": "https://github.com/aliwojo/front-end-developer-challenge#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^6.26.3",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "chai": "^4.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "mocha": "^6.1.4",
+    "sass": "^1.32.8",
+    "webpack": "^5.27.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
