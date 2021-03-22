@@ -40,24 +40,28 @@ export default class Root extends React.Component {
   render() {
     const { pointsSpent, talent1Points, talent2Points } = this.state;
     return (
-      <div id="main">
+      <>
         <div id="title">
           TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
         </div>
-        <TalentPath
-          talentNum={1}
-          points={talent1Points}
-          handleClick={this.handleClick}
-          handleContextMenu={this.handleContextMenu}
-        />
-        <TalentPath
-          talentNum={2}
-          points={talent2Points}
-          handleClick={this.handleClick}
-          handleContextMenu={this.handleContextMenu}
-        />
+        <div id="paths">
+          <TalentPath
+            talentNum={1}
+            points={talent1Points}
+            pointsSpent={pointsSpent}
+            handleClick={this.handleClick}
+            handleContextMenu={this.handleContextMenu}
+          />
+          <TalentPath
+            talentNum={2}
+            points={talent2Points}
+            pointsSpent={pointsSpent}
+            handleClick={this.handleClick}
+            handleContextMenu={this.handleContextMenu}
+          />
+        </div>
         <PointsDisplay spent={pointsSpent} />
-      </div>
+      </>
     );
   }
 }

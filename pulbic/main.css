@@ -1,0 +1,157 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.level {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(#525252 50%, #3a3f44 50% 52%, #525252);
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+  margin: 20px;
+}
+
+.talent-2 .sprite, .talent-1 .sprite {
+  width: 50px;
+  height: 50px;
+  background-image: url(./assets/talent-icons-sprite.png);
+  margin: 5px;
+  position: relative;
+  z-index: 10;
+}
+.talent-2 .sprite:hover, .talent-1 .sprite:hover {
+  background-position-y: 0px;
+}
+
+#main {
+  background-image: url(./assets/talent-calc-bg.png);
+}
+
+.talent-1 .progress-two {
+  width: 60px;
+  height: 10px;
+  left: -340px;
+  top: -44px;
+  position: relative;
+  z-index: 2;
+  background: rgba(100, 100, 100, 0.5);
+  border: 2px solid white;
+  display: inline-block;
+}
+.talent-1 .progress-three {
+  width: 60px;
+  height: 10px;
+  left: -300px;
+  top: -44px;
+  position: relative;
+  z-index: 2;
+  background: rgba(100, 100, 100, 0.5);
+  border: 2px solid white;
+  display: inline-block;
+}
+.talent-1 .progress-four {
+  width: 60px;
+  height: 10px;
+  left: -260px;
+  top: -44px;
+  position: relative;
+  z-index: 2;
+  background: rgba(100, 100, 100, 0.5);
+  border: 2px solid white;
+  display: inline-block;
+}
+.talent-1 .highlighted {
+  background: white;
+}
+.talent-1:hover .next {
+  background: white;
+}
+.talent-1 .sprite {
+  background-position-y: 50px;
+}
+.talent-1 .one .sprite {
+  background-position-x: 0px;
+}
+.talent-1 .two .sprite {
+  background-position-x: -50px;
+}
+.talent-1 .three .sprite {
+  background-position-x: -100px;
+}
+.talent-1 .four .sprite {
+  background-position-x: -150px;
+}
+.talent-1 .selected {
+  background: linear-gradient(#548ec1 50%, #34547c 50% 52%, #548ec1);
+  box-shadow: 0 0 5px grey;
+}
+.talent-1 .selected .sprite {
+  background-position-y: 0px;
+}
+
+.talent-2 .progress-two {
+  width: 60px;
+  height: 10px;
+  left: -340px;
+  top: -44px;
+  position: relative;
+  z-index: 2;
+  background: rgba(100, 100, 100, 0.5);
+  border: 2px solid white;
+  display: inline-block;
+}
+.talent-2 .progress-three {
+  width: 60px;
+  height: 10px;
+  left: -300px;
+  top: -44px;
+  position: relative;
+  z-index: 2;
+  background: rgba(100, 100, 100, 0.5);
+  border: 2px solid white;
+  display: inline-block;
+}
+.talent-2 .progress-four {
+  width: 60px;
+  height: 10px;
+  left: -260px;
+  top: -44px;
+  position: relative;
+  z-index: 2;
+  background: rgba(100, 100, 100, 0.5);
+  border: 2px solid white;
+  display: inline-block;
+}
+.talent-2 .highlighted {
+  background: white;
+}
+.talent-2:hover .next {
+  background: white;
+}
+.talent-2 .sprite {
+  background-position-y: 50px;
+}
+.talent-2 .one .sprite {
+  background-position-x: -200px;
+}
+.talent-2 .two .sprite {
+  background-position-x: -250px;
+}
+.talent-2 .three .sprite {
+  background-position-x: -300px;
+}
+.talent-2 .four .sprite {
+  background-position-x: -350px;
+}
+.talent-2 .selected {
+  background: linear-gradient(#548ec1 50%, #34547c 50% 52%, #548ec1);
+  box-shadow: 0 0 5px grey;
+}
+.talent-2 .selected .sprite {
+  background-position-y: 0px;
+}
+
+/*# sourceMappingURL=main.css.map */

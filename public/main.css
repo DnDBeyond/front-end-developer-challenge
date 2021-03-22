@@ -1,0 +1,245 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: #e6e5e5;
+}
+
+#paths {
+  height: 50vh;
+  width: 70vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+#title {
+  width: 90vw;
+  height: 3vw;
+  align-self: center;
+  text-align: center;
+  font-size: 2.5vw;
+  padding: 1vw 0;
+  background-color: #1a1a1a;
+  border-radius: 0.2vw;
+}
+
+.points {
+  width: 15vw;
+  height: 4vw;
+  padding: 1vw 0 2vw 0;
+  background-color: black;
+  border-radius: 0.2vw;
+  margin: 1vw;
+  text-align: center;
+}
+.points .spent {
+  font-size: 2vw;
+}
+.points .label {
+  font-size: 2vw;
+  color: #354c87;
+}
+
+.level {
+  content: "";
+  width: 6vw;
+  height: 6vw;
+  background: linear-gradient(#525252 50%, #3a3f44 50% 52%, #525252);
+  z-index: 5;
+  position: relative;
+  display: inline-block;
+  border: 2px solid #414141;
+}
+
+.talent-2 .sprite, .talent-1 .sprite {
+  width: 5.2vw;
+  height: 5.2vw;
+  background-image: url(./assets/talent-icons-sprite.png);
+  background-size: 800%;
+  margin: 0.4vw;
+  position: relative;
+  z-index: 10;
+}
+.talent-2 .sprite:hover, .talent-1 .sprite:hover {
+  background-position-y: 0px;
+  cursor: pointer;
+}
+
+#app {
+  background-image: url(./assets/talent-calc-bg.png);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.talent-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.talent-1 .sprite {
+  background-position-y: 100%;
+}
+.talent-1 .name {
+  text-align: center;
+  font-size: 1vw;
+  width: 15vw;
+  height: 1vh;
+}
+.talent-1 .path {
+  width: 50vw;
+  height: 6vw;
+}
+.talent-1 .progress-one {
+  width: 7vw;
+  height: 1vw;
+  display: inline-block;
+  position: relative;
+  top: -2.5vw;
+  z-index: 2;
+  background: rgba(52, 52, 52, 0.762);
+  border-top: 2px solid #414141;
+  border-bottom: 2px solid #414141;
+}
+.talent-1 .progress-two {
+  width: 7vw;
+  height: 1vw;
+  display: inline-block;
+  position: relative;
+  top: -2.5vw;
+  z-index: 2;
+  background: rgba(52, 52, 52, 0.762);
+  border-top: 2px solid #414141;
+  border-bottom: 2px solid #414141;
+}
+.talent-1 .progress-three {
+  width: 7vw;
+  height: 1vw;
+  display: inline-block;
+  position: relative;
+  top: -2.5vw;
+  z-index: 2;
+  background: rgba(52, 52, 52, 0.762);
+  border-top: 2px solid #414141;
+  border-bottom: 2px solid #414141;
+}
+.talent-1 .highlighted {
+  background: rgba(82, 82, 82, 0.796);
+  border-bottom: 2px solid #606060;
+  border-top: 2px solid #606060;
+}
+.talent-1:hover .next {
+  background: rgba(82, 82, 82, 0.796);
+  border-bottom: 2px solid #606060;
+  border-top: 2px solid #606060;
+}
+.talent-1 .one .sprite {
+  background-position-x: 0%;
+}
+.talent-1 .two .sprite {
+  background-position-x: 14.3%;
+}
+.talent-1 .three .sprite {
+  background-position-x: 28.7%;
+}
+.talent-1 .four .sprite {
+  background-position-x: 43%;
+}
+.talent-1 .selected {
+  background: linear-gradient(#66b5fa 50%, #23446c 50% 52%, #66b5fa);
+  box-shadow: 0 0 5px #66b5fa;
+}
+.talent-1 .selected .sprite {
+  background-position-y: 0%;
+}
+
+.talent-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.talent-2 .sprite {
+  background-position-y: 100%;
+}
+.talent-2 .name {
+  text-align: center;
+  font-size: 1vw;
+  width: 15vw;
+  height: 1vh;
+}
+.talent-2 .path {
+  width: 50vw;
+  height: 6vw;
+}
+.talent-2 .progress-one {
+  width: 7vw;
+  height: 1vw;
+  display: inline-block;
+  position: relative;
+  top: -2.5vw;
+  z-index: 2;
+  background: rgba(52, 52, 52, 0.762);
+  border-top: 2px solid #414141;
+  border-bottom: 2px solid #414141;
+}
+.talent-2 .progress-two {
+  width: 7vw;
+  height: 1vw;
+  display: inline-block;
+  position: relative;
+  top: -2.5vw;
+  z-index: 2;
+  background: rgba(52, 52, 52, 0.762);
+  border-top: 2px solid #414141;
+  border-bottom: 2px solid #414141;
+}
+.talent-2 .progress-three {
+  width: 7vw;
+  height: 1vw;
+  display: inline-block;
+  position: relative;
+  top: -2.5vw;
+  z-index: 2;
+  background: rgba(52, 52, 52, 0.762);
+  border-top: 2px solid #414141;
+  border-bottom: 2px solid #414141;
+}
+.talent-2 .highlighted {
+  background: rgba(82, 82, 82, 0.796);
+  border-bottom: 2px solid #606060;
+  border-top: 2px solid #606060;
+}
+.talent-2:hover .next {
+  background: rgba(82, 82, 82, 0.796);
+  border-bottom: 2px solid #606060;
+  border-top: 2px solid #606060;
+}
+.talent-2 .one .sprite {
+  background-position-x: 57.3%;
+}
+.talent-2 .two .sprite {
+  background-position-x: 71.7%;
+}
+.talent-2 .three .sprite {
+  background-position-x: 86%;
+}
+.talent-2 .four .sprite {
+  background-position-x: 100%;
+}
+.talent-2 .selected {
+  background: linear-gradient(#66b5fa 50%, #23446c 50% 52%, #66b5fa);
+  box-shadow: 0 0 5px #66b5fa;
+}
+.talent-2 .selected .sprite {
+  background-position-y: 0%;
+}
+
+/*# sourceMappingURL=main.css.map */
