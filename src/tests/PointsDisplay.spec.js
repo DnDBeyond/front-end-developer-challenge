@@ -9,10 +9,11 @@ enzyme.configure({ adapter });
 
 describe('PointsDisplay', () => {
   let pointsDisplay;
-  const pointsSpent = 0;
+  let pointsDisplay2;
 
   beforeEach(() => {
-    pointsDisplay = shallow(<PointsDisplay spent={pointsSpent} />);
+    pointsDisplay = shallow(<PointsDisplay spent={0} />);
+    pointsDisplay2 = shallow(<PointsDisplay spent={2} />);
   });
 
   it('renders "Points Spent" in an h3', () => {
@@ -21,5 +22,6 @@ describe('PointsDisplay', () => {
 
   it('renders the number of points spent in an h2', () => {
     expect(pointsDisplay.find('h2').text()).to.be.equal('0/6');
+    expect(pointsDisplay2.find('h2').text()).to.be.equal('2/6');
   });
 });

@@ -11,21 +11,29 @@ export default class Root extends React.Component {
       talent1Points: 0,
       talent2Points: 0,
     };
+    this.handleClick = this.handleClick.bind(this);
+    this.handContextMenu = this.handContextMenu.bind(this);
   }
 
   handleClick(talentNum, level) {
-    if (pointsSpent < 6 && level === this.state[`talent${talentNum}Points`]) {
+    if (
+      this.state.pointsSpent < 6 &&
+      level === this.state[`talent${talentNum}Points`]
+    ) {
+      console.log('uhuh');
       this.setState({
         [`talent${talentNum}Points`]: level,
+        pointsSpent: this.state.pointsSpent + 1,
       });
     }
   }
 
-  handContentMenu(talentNum, level, event) {
+  handContextMenu(talentNum, level, event) {
     event.preventDefault();
     if (level === this.state[`talent${talentNum}Points`]) {
       this.setState({
         [`talent${talentNum}Points`]: level - 1,
+        pointsSpent: this.state.pointsSpent - 1,
       });
     }
   }
@@ -37,8 +45,18 @@ export default class Root extends React.Component {
         <h1 id="title">
           TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
         </h1>
-        <TalentPath talentNum={1} points={talent1Points} />
-        <TalentPath talentNum={2} points={talent2Points} />
+        <TalentPath
+          talentNum={1}
+          points={talent1Points}
+          handleClick={this.handleClick}
+          handleContextMenu={this.handleContextMenu}
+        />
+        <TalentPath
+          talentNum={2}
+          points={talent2Points}
+          handleClick={this.handleClick}
+          handleContextMenu={this.handleContextMenu}
+        />
         <PointsDisplay spent={pointsSpent} />
       </div>
     );

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import React from 'react';
-import enzyme, { shallow } from 'enzyme';
+import enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Root from '../components/Root';
 
@@ -11,18 +11,29 @@ describe('Root', () => {
   let root;
 
   beforeEach(() => {
-    root = shallow(<Root />);
+    root = mount(<Root />);
   });
 
   it('renders the page title in an h1', () => {
-    expect(root.find('h1').text()).to.be.equal(
+    expect(root.find('#title').text()).to.be.equal(
       'TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000'
     );
   });
 
-  it('all point totals in state start at 0', () => {
+  it('has initial state point totals of 0', () => {
     expect(root.state('pointsSpent')).to.equal(0);
-    expect(root.state('talentOnePoints')).to.equal(0);
-    expect(root.state('talentTwoPoints')).to.equal(0);
+    expect(root.state('talent1Points')).to.equal(0);
+    expect(root.state('talent2Points')).to.equal(0);
+  });
+
+  it('changes point totals when talent level is clicked, only if available', () => {
+    expect(root.state('pointsSpent')).to.equal(0);
+    expect(root.state('talent1Points')).to.equal(0);
+    root.find('img').at(0).simulate('click');
+    expect(root.state('pointsSpent')).to.equal(1);
+    expect(root.state('talent1Points')).to.equal(1);
+    root.find('img').at(3).simulate('click');
+    expect(root.state('pointsSpent')).to.equal(1);
+    expect(root.state('talent1Points')).to.equal(1);
   });
 });

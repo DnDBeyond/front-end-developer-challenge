@@ -2,19 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const TalentPath = (props) => {
-  const { talentNum, points } = props;
+  const { talentNum, points, handleContextMenu, handleClick } = props;
   const talentLevels = [1, 2, 3, 4];
   return (
     <div className={`talent-${talentNum}`}>
       <h4>{`Talent Path ${talentNum}`}</h4>
       {talentLevels.map((num) => {
         const className =
-          num <= points ? `talent-${num} selected` : `talent-${num}`;
+          num <= points ? `level-${num} selected` : `level-${num}`;
         return (
           <img
             key={num}
             className={className}
-            src="../../public/assets/talent-icons-sprite.png"
+            src="./assets/talent-icons-sprite.png"
+            onClick={() => handleClick(talentNum, num)}
+            onContextMenu={(e) => handleContextMenu(talentNum, num, e)}
           />
         );
       })}
@@ -23,7 +25,7 @@ const TalentPath = (props) => {
           num <= points
             ? `progess-bar-${num} highlighted`
             : `progress-bar-${num}`;
-        return num > 1 && <rect key={num} className={className} />;
+        return num > 1 && <div key={num} className={className} />;
       })}
     </div>
   );
