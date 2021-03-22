@@ -19,4 +19,10 @@ describe('Root', () => {
       'TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000'
     );
   });
+
+  it('all point totals in state start at 0', () => {
+    expect(root.state('pointsSpent')).to.equal(0);
+    expect(root.state('talentOnePoints')).to.equal(0);
+    expect(root.state('talentTwoPoints')).to.equal(0);
+  });
 });
