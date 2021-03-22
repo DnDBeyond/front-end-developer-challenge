@@ -9,8 +9,8 @@ $spriteBoarderColorSelected: linear-gradient(
   rgb(102, 181, 250)
 );
 
-$path-width: 45vw;
-$level-size: 6vw;
+$path-width: 55vw;
+$level-size: 5vw;
 
 * {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
@@ -19,8 +19,7 @@ $level-size: 6vw;
 }
 
 #paths {
-  height: 50vh;
-  width: 70vw;
+  height: 25vw;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -41,7 +40,8 @@ $level-size: 6vw;
   width: 15vw;
   height: 4vw;
   padding: 1vw 0 2vw 0;
-  background-color: black;
+  background-color: rgb(12, 12, 12);
+  border: 2px solid rgb(19, 19, 19);
   border-radius: 0.2vw;
   margin: 1vw;
   .spent {
@@ -49,15 +49,15 @@ $level-size: 6vw;
   }
   .label {
     font-size: 2vw;
-    color: rgb(53, 76, 135);
+    color: rgb(62, 79, 121);
   }
   text-align: center;
 }
 
 .level {
   content: '';
-  width: 6vw;
-  height: 6vw;
+  width: $level-size;
+  height: $level-size;
   background: $spriteBoarderColor;
   z-index: 5;
   position: relative;
@@ -78,11 +78,11 @@ $level-size: 6vw;
 }
 
 %sprite {
-  width: 5.2vw;
-  height: 5.2vw;
+  width: 4.4vw;
+  height: 4.4vw;
   background-image: url(./assets/talent-icons-sprite.png);
   background-size: 800%;
-  margin: 0.4vw;
+  margin: 0.3vw;
   position: relative;
   z-index: 10;
   &:hover {
@@ -92,45 +92,55 @@ $level-size: 6vw;
 }
 
 @mixin progress-bar($left) {
-  width: ($path-width - $level-size * 4)/3;
+  width: ($path-width - $level-size * 4 - 3vw)/3;
   height: 1vw;
   display: inline-block;
   position: relative;
-  top: -2.5vw;
+  top: -2vw;
   z-index: 2;
   background: rgba(52, 52, 52, 0.762);
   border-top: 2px solid rgb(65, 65, 65);
   border-bottom: 2px solid rgb(65, 65, 65);
 }
 
-#app {
+#main {
   background-image: url(./assets/talent-calc-bg.png);
-  width: 100vw;
-  height: 100vh;
+  width: 93vw;
+  height: 35vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
+  border: 1vw solid rgb(26, 26, 26);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  background-color: black;
 }
 
 @mixin talent($sprite1, $sprite2, $sprite3, $sprite4) {
   @include spritePosY(100%);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
   .name {
-    text-align: center;
     font-size: 1vw;
-    width: 15vw;
+    width: 10vw;
     height: 1vh;
   }
   .path {
-    width: 50vw;
-    height: 6vw;
+    width: $path-width;
+    height: $level-size;
   }
   .progress-one {
     @include progress-bar(-340);

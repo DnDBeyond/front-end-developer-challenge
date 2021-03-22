@@ -40,7 +40,7 @@ export default class Root extends React.Component {
   render() {
     const { pointsSpent, talent1Points, talent2Points } = this.state;
     return (
-      <>
+      <div id="main">
         <div id="title">
           TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
         </div>
@@ -61,7 +61,7 @@ export default class Root extends React.Component {
           />
         </div>
         <PointsDisplay spent={pointsSpent} />
-      </>
+      </div>
     );
   }
 }

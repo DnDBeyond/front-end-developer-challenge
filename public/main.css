@@ -4,8 +4,7 @@
 }
 
 #paths {
-  height: 50vh;
-  width: 70vw;
+  height: 25vw;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -26,7 +25,8 @@
   width: 15vw;
   height: 4vw;
   padding: 1vw 0 2vw 0;
-  background-color: black;
+  background-color: #0c0c0c;
+  border: 2px solid #131313;
   border-radius: 0.2vw;
   margin: 1vw;
   text-align: center;
@@ -36,13 +36,13 @@
 }
 .points .label {
   font-size: 2vw;
-  color: #354c87;
+  color: #3e4f79;
 }
 
 .level {
   content: "";
-  width: 6vw;
-  height: 6vw;
+  width: 5vw;
+  height: 5vw;
   background: linear-gradient(#525252 50%, #3a3f44 50% 52%, #525252);
   z-index: 5;
   position: relative;
@@ -51,11 +51,11 @@
 }
 
 .talent-2 .sprite, .talent-1 .sprite {
-  width: 5.2vw;
-  height: 5.2vw;
+  width: 4.4vw;
+  height: 4.4vw;
   background-image: url(./assets/talent-icons-sprite.png);
   background-size: 800%;
-  margin: 0.4vw;
+  margin: 0.3vw;
   position: relative;
   z-index: 10;
 }
@@ -64,22 +64,33 @@
   cursor: pointer;
 }
 
-#app {
+#main {
   background-image: url(./assets/talent-calc-bg.png);
-  width: 100vw;
-  height: 100vh;
+  width: 93vw;
+  height: 35vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
+  border: 1vw solid #1a1a1a;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  background-color: black;
 }
 
 .talent-1 {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
 }
@@ -87,43 +98,42 @@
   background-position-y: 100%;
 }
 .talent-1 .name {
-  text-align: center;
   font-size: 1vw;
-  width: 15vw;
+  width: 10vw;
   height: 1vh;
 }
 .talent-1 .path {
-  width: 50vw;
-  height: 6vw;
+  width: 55vw;
+  height: 5vw;
 }
 .talent-1 .progress-one {
-  width: 7vw;
+  width: 10.6666666667vw;
   height: 1vw;
   display: inline-block;
   position: relative;
-  top: -2.5vw;
+  top: -2vw;
   z-index: 2;
   background: rgba(52, 52, 52, 0.762);
   border-top: 2px solid #414141;
   border-bottom: 2px solid #414141;
 }
 .talent-1 .progress-two {
-  width: 7vw;
+  width: 10.6666666667vw;
   height: 1vw;
   display: inline-block;
   position: relative;
-  top: -2.5vw;
+  top: -2vw;
   z-index: 2;
   background: rgba(52, 52, 52, 0.762);
   border-top: 2px solid #414141;
   border-bottom: 2px solid #414141;
 }
 .talent-1 .progress-three {
-  width: 7vw;
+  width: 10.6666666667vw;
   height: 1vw;
   display: inline-block;
   position: relative;
-  top: -2.5vw;
+  top: -2vw;
   z-index: 2;
   background: rgba(52, 52, 52, 0.762);
   border-top: 2px solid #414141;
@@ -162,7 +172,7 @@
 .talent-2 {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
 }
@@ -170,43 +180,42 @@
   background-position-y: 100%;
 }
 .talent-2 .name {
-  text-align: center;
   font-size: 1vw;
-  width: 15vw;
+  width: 10vw;
   height: 1vh;
 }
 .talent-2 .path {
-  width: 50vw;
-  height: 6vw;
+  width: 55vw;
+  height: 5vw;
 }
 .talent-2 .progress-one {
-  width: 7vw;
+  width: 10.6666666667vw;
   height: 1vw;
   display: inline-block;
   position: relative;
-  top: -2.5vw;
+  top: -2vw;
   z-index: 2;
   background: rgba(52, 52, 52, 0.762);
   border-top: 2px solid #414141;
   border-bottom: 2px solid #414141;
 }
 .talent-2 .progress-two {
-  width: 7vw;
+  width: 10.6666666667vw;
   height: 1vw;
   display: inline-block;
   position: relative;
-  top: -2.5vw;
+  top: -2vw;
   z-index: 2;
   background: rgba(52, 52, 52, 0.762);
   border-top: 2px solid #414141;
   border-bottom: 2px solid #414141;
 }
 .talent-2 .progress-three {
-  width: 7vw;
+  width: 10.6666666667vw;
   height: 1vw;
   display: inline-block;
   position: relative;
-  top: -2.5vw;
+  top: -2vw;
   z-index: 2;
   background: rgba(52, 52, 52, 0.762);
   border-top: 2px solid #414141;
