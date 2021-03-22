@@ -6,9 +6,9 @@
   "scripts": {
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
-    "start": "node server",
+    "start": "nodemon server.js",
     "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' npm run start-server",
-    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+    "start-server": "nodemon server.js -e html,js,scss --ignore public --ignore client",
     "test": "NODE_ENV='test' mocha \"./src/**/*.spec.js\" -require @babel/register"
   },
   "repository": {
@@ -45,7 +45,7 @@
     "prop-types": "^15.7.2",
     "sass": "^1.32.8",
     "webpack": "^5.27.1",
-    "webpack-cli": "^3.1.0",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2"
   }
 }
