@@ -24,6 +24,8 @@ const TalentPath = (props) => {
         const className =
           num <= points
             ? `progess-bar-${num} highlighted`
+            : num === points + 1
+            ? `progress-bar-${num} next`
             : `progress-bar-${num}`;
         return num > 1 && <div key={num} className={className} />;
       })}

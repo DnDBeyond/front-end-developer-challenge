@@ -12,15 +12,14 @@ export default class Root extends React.Component {
       talent2Points: 0,
     };
     this.handleClick = this.handleClick.bind(this);
-    this.handContextMenu = this.handContextMenu.bind(this);
+    this.handleContextMenu = this.handleContextMenu.bind(this);
   }
 
   handleClick(talentNum, level) {
     if (
       this.state.pointsSpent < 6 &&
-      level === this.state[`talent${talentNum}Points`]
+      level === this.state[`talent${talentNum}Points`] + 1
     ) {
-      console.log('uhuh');
       this.setState({
         [`talent${talentNum}Points`]: level,
         pointsSpent: this.state.pointsSpent + 1,
@@ -28,7 +27,7 @@ export default class Root extends React.Component {
     }
   }
 
-  handContextMenu(talentNum, level, event) {
+  handleContextMenu(talentNum, level, event) {
     event.preventDefault();
     if (level === this.state[`talent${talentNum}Points`]) {
       this.setState({
