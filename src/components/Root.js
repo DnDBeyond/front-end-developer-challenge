@@ -40,10 +40,10 @@ export default class Root extends React.Component {
   render() {
     const { pointsSpent, talent1Points, talent2Points } = this.state;
     return (
-      <div>
-        <h1 id="title">
+      <div id="main">
+        <div id="title">
           TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
-        </h1>
+        </div>
         <TalentPath
           talentNum={1}
           points={talent1Points}

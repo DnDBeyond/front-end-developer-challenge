@@ -16,8 +16,8 @@ describe('TalentPath', () => {
     talentPath2 = shallow(<TalentPath talentNum={1} points={2} />);
   });
 
-  it('renders the skill path name in an h4', () => {
-    expect(talentPath.find('h4').text()).to.be.equal('Talent Path 1');
+  it('renders the skill path name', () => {
+    expect(talentPath.find('.name').text()).to.be.equal('TALENT PATH 1');
   });
 
   it('number of image with className selected matches number of points in props', () => {

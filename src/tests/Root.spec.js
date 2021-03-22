@@ -14,7 +14,7 @@ describe('Root', () => {
     root = mount(<Root />);
   });
 
-  it('renders the page title in an h1', () => {
+  it('renders the page title', () => {
     expect(root.find('#title').text()).to.be.equal(
       'TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000'
     );
@@ -29,10 +29,10 @@ describe('Root', () => {
   it('changes point totals when talent level is clicked, only if available', () => {
     expect(root.state('pointsSpent')).to.equal(0);
     expect(root.state('talent1Points')).to.equal(0);
-    root.find('img').at(0).simulate('click');
+    root.find('.level').at(0).simulate('click');
     expect(root.state('pointsSpent')).to.equal(1);
     expect(root.state('talent1Points')).to.equal(1);
-    root.find('img').at(3).simulate('click');
+    root.find('.level').at(3).simulate('click');
     expect(root.state('pointsSpent')).to.equal(1);
     expect(root.state('talent1Points')).to.equal(1);
   });

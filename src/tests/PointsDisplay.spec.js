@@ -16,12 +16,12 @@ describe('PointsDisplay', () => {
     pointsDisplay2 = shallow(<PointsDisplay spent={2} />);
   });
 
-  it('renders "Points Spent" in an h3', () => {
-    expect(pointsDisplay.find('h3').text()).to.be.equal('Points Spent');
+  it('renders "Points Spent"', () => {
+    expect(pointsDisplay.find('.label').text()).to.be.equal('Points Spent');
   });
 
-  it('renders the number of points spent in an h2', () => {
-    expect(pointsDisplay.find('h2').text()).to.be.equal('0/6');
-    expect(pointsDisplay2.find('h2').text()).to.be.equal('2/6');
+  it('renders the number of points spent', () => {
+    expect(pointsDisplay.find('.spent').text()).to.be.equal('0/6');
+    expect(pointsDisplay2.find('.spent').text()).to.be.equal('2/6');
   });
 });
