@@ -13,6 +13,7 @@ export default class Root extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleContextMenu = this.handleContextMenu.bind(this);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this);
   }
 
   handleClick(talentNum, level) {
@@ -37,6 +38,11 @@ export default class Root extends React.Component {
     }
   }
 
+  handleTouchEnd(talentNum, level, event) {
+    this.handleClick(talentNum, level);
+    this.handleContextMenu(talentNum, level, event);
+  }
+
   render() {
     const { pointsSpent, talent1Points, talent2Points } = this.state;
     return (
@@ -51,6 +57,7 @@ export default class Root extends React.Component {
             pointsSpent={pointsSpent}
             handleClick={this.handleClick}
             handleContextMenu={this.handleContextMenu}
+            handleTouchEnd={this.handleTouchEnd}
           />
           <TalentPath
             talentNum={2}
@@ -58,6 +65,7 @@ export default class Root extends React.Component {
             pointsSpent={pointsSpent}
             handleClick={this.handleClick}
             handleContextMenu={this.handleContextMenu}
+            handleTouchEnd={this.handleTouchEnd}
           />
         </div>
         <PointsDisplay spent={pointsSpent} />

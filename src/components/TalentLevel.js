@@ -7,6 +7,7 @@ const TalentLevel = (props) => {
     points,
     handleClick,
     handleContextMenu,
+    handleTouchEnd,
     num,
   } = props;
   const className =
@@ -16,6 +17,7 @@ const TalentLevel = (props) => {
       className={className}
       onClick={() => handleClick(talentNum, levelNum)}
       onContextMenu={(e) => handleContextMenu(talentNum, levelNum, e)}
+      onTouchEnd={(e) => handleTouchEnd(talentNum, levelNum, e)}
     >
       <div className="sprite" />
     </div>
