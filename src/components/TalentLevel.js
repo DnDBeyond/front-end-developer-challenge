@@ -10,6 +10,10 @@ const TalentLevel = (props) => {
     handleTouchEnd,
     num,
   } = props;
+
+  //if this level's id number is less than or equal to
+  //the number of points spent on its talent path
+  //the user has selected it, so it receives the 'selected' class name
   const className =
     levelNum <= points ? `level ${num} selected` : `level ${num}`;
   return (

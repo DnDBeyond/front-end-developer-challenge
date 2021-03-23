@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TalentPath from './TalentPath';
 import PointsDisplay from './PointsDisplay';
 
@@ -16,6 +15,9 @@ export default class Root extends React.Component {
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
   }
 
+  //For all event handlers:
+  //talentNum = id number of talent path (1 or 2)
+  //level = number representing where the target item is in its talent path order
   handleClick(talentNum, level) {
     if (
       this.state.pointsSpent < 6 &&
@@ -38,6 +40,7 @@ export default class Root extends React.Component {
     }
   }
 
+  //allows for full functionality on a touch screen
   handleTouchEnd(talentNum, level, event) {
     this.handleClick(talentNum, level);
     this.handleContextMenu(talentNum, level, event);
