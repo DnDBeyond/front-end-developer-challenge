@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import React from 'react';
-import enzyme, { shallow } from 'enzyme';
+import enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import TalentPath from '../components/TalentPath';
 
@@ -12,8 +12,8 @@ describe('TalentPath', () => {
   let talentPath2;
 
   beforeEach(() => {
-    talentPath = shallow(<TalentPath talentNum={1} points={0} />);
-    talentPath2 = shallow(<TalentPath talentNum={1} points={2} />);
+    talentPath = mount(<TalentPath talentNum={1} points={0} />);
+    talentPath2 = mount(<TalentPath talentNum={1} points={2} />);
   });
 
   it('renders the skill path name', () => {
