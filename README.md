@@ -7,19 +7,27 @@ Welcome to my version of the TitanStar Legends Rune Mastery Loadout Talent Calcu
 ## Tech Stack
 
 - Sass/SCSS (Styling)
-- React.js (Reusable components and state management)
+- React.js (Reusable Components and State Management)
 - Express.js (API)
+- Mocha/Chai/Enzyme (Test Driven Development for React Components)
+- Webpack (Bundler)
+- Babel (Javascript Transcompiler)
 
 ## Features
 
 - User has 6 points to spend over 2 talent paths
-- Display shows total points spent
+- Responsive display shows total points spent
 - Talent levels must be selected or deselected in order
-- With a mouse, levels are selected with left click and deselected with right click
-- With a touch screen, selecting and deselecting are both done by touching an appropriate level
+- While using a mouse:
+  - select with left click
+  - deselect with right click
+  - Hovering over a talent path highlights the progess bar leading to the next level,
+    but only if points are available
+- With a touch screen:
+  - selecting and deselecting are both done by touching an appropriate level
   - First touch selects
   - Second touch deselects
-- Responsive design with verticle mode for thin views
+- Responsive design includes a vertical mode for thin views
 
 ## Run Locally
 
