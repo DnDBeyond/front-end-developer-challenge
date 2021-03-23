@@ -11,10 +11,9 @@
 #app {
   width: 100vw;
   height: 100vh;
+  min-height: 40vw;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
   background-color: black;
 }
 
@@ -22,6 +21,7 @@
   background-image: url(./assets/talent-calc-bg.png);
   width: 93vw;
   height: 35vw;
+  margin: 2vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -75,29 +75,77 @@
   text-align: center;
 }
 
-@media (max-width: 700px) and (min-height: 500px) {
+//Verticle mode for thin views
+@media (max-width: 800px) and (min-height: 500px) {
   #main {
     height: 93vh;
     width: 35vh;
+    margin: 2vh;
     flex-direction: column;
   }
+
   #paths {
     flex-direction: row;
     height: 60vh;
     width: 25vh;
     justify-content: space-between;
   }
+
   #title {
     width: 32vh;
     height: 5vh;
     font-size: 2vh;
   }
-  #talent-1 {
-    @include verticleTalent();
-  }
+
+  #talent-1,
   #talent-2 {
-    @include verticleTalent();
+    flex-direction: column;
+    .name {
+      font-size: 1vh;
+      width: 10vh;
+      height: 1vh;
+      padding: 1vh 0;
+      text-align: center;
+    }
+    .path {
+      width: 5vh;
+      height: 55vh;
+    }
+    .progress-bar {
+      height: 10.6vh;
+      width: 1vh;
+      border-right: $dark-border;
+      border-left: $dark-border;
+      border-top: none;
+      border-bottom: none;
+      top: 0;
+      right: -1.8vh;
+      &.highlighted {
+        border-right: $light-border;
+        border-left: $light-border;
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+    .sprite {
+      width: 4.4vh;
+      height: 4.4vh;
+      margin: 0.3vh;
+    }
+    .level {
+      width: 5vh;
+      height: 5vh;
+    }
+    &:hover {
+      .next {
+        border-right: $light-border;
+        border-left: $light-border;
+        border-top: none;
+        border-bottom: none;
+      }
+    }
   }
+
   #points {
     width: 15vh;
     height: 4vh;
