@@ -74,3 +74,41 @@
   }
   text-align: center;
 }
+
+@media (max-width: 700px) and (min-height: 500px) {
+  #main {
+    height: 93vh;
+    width: 35vh;
+    flex-direction: column;
+  }
+  #paths {
+    flex-direction: row;
+    height: 60vh;
+    width: 25vh;
+    justify-content: space-between;
+  }
+  #title {
+    width: 32vh;
+    height: 5vh;
+    font-size: 2vh;
+  }
+  #talent-1 {
+    @include verticleTalent();
+  }
+  #talent-2 {
+    @include verticleTalent();
+  }
+  #points {
+    width: 15vh;
+    height: 4vh;
+    padding: 1vh 0 2vh 0;
+    border-radius: 0.2vh;
+    margin: 1vh;
+    .spent {
+      font-size: 2vh;
+    }
+    .label {
+      font-size: 2vh;
+    }
+  }
+}

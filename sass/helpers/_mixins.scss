@@ -58,3 +58,51 @@
     box-shadow: 0 0 5px $sky-blue;
   }
 }
+
+@mixin verticleTalent() {
+  flex-direction: column;
+  .name {
+    font-size: 1vh;
+    width: 10vh;
+    height: 1vh;
+    padding: 1vh 0;
+    text-align: center;
+  }
+  .path {
+    width: 5vh;
+    height: 55vh;
+  }
+  .progress-bar {
+    height: 10.6vh;
+    width: 1vh;
+    border-right: $dark-border;
+    border-left: $dark-border;
+    border-top: none;
+    border-bottom: none;
+    top: 0;
+    right: -1.8vh;
+    &.highlighted {
+      border-right: $light-border;
+      border-left: $light-border;
+      border-top: none;
+      border-bottom: none;
+    }
+  }
+  .sprite {
+    width: 4.4vh;
+    height: 4.4vh;
+    margin: 0.3vh;
+  }
+  .level {
+    width: 5vh;
+    height: 5vh;
+  }
+  &:hover {
+    .next {
+      border-right: $light-border;
+      border-left: $light-border;
+      border-top: none;
+      border-bottom: none;
+    }
+  }
+}

@@ -2,6 +2,7 @@ $path-width: 55vw;
 $level-size: 5vw;
 $dark-grey: rgb(26, 26, 26);
 $mid-grey: rgb(65, 65, 65);
+$light-grey: rgb(82, 82, 82);
 $sky-blue: rgb(102, 181, 250);
 
 $spriteBoarderGradient: linear-gradient(
@@ -14,3 +15,7 @@ $spriteBoarderGradientSelected: linear-gradient(
   rgb(35, 68, 108) 50% 52%,
   $sky-blue
 );
+
+$light-border: 2px solid $light-grey;
+$mid-border: 2px solid $mid-grey;
+$dark-border: 2px solid $dark-grey;

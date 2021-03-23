@@ -182,4 +182,131 @@
   color: #3e4f79;
 }
 
+@media (max-width: 700px) and (min-height: 500px) {
+  #main {
+    height: 93vh;
+    width: 35vh;
+    flex-direction: column;
+  }
+
+  #paths {
+    flex-direction: row;
+    height: 60vh;
+    width: 25vh;
+    justify-content: space-between;
+  }
+
+  #title {
+    width: 32vh;
+    height: 5vh;
+    font-size: 2vh;
+  }
+
+  #talent-1 {
+    flex-direction: column;
+  }
+  #talent-1 .name {
+    font-size: 1vh;
+    width: 10vh;
+    height: 1vh;
+    padding: 1vh 0;
+    text-align: center;
+  }
+  #talent-1 .path {
+    width: 5vh;
+    height: 55vh;
+  }
+  #talent-1 .progress-bar {
+    height: 10.6vh;
+    width: 1vh;
+    border-right: 2px solid #1a1a1a;
+    border-left: 2px solid #1a1a1a;
+    border-top: none;
+    border-bottom: none;
+    top: 0;
+    right: -1.8vh;
+  }
+  #talent-1 .progress-bar.highlighted {
+    border-right: 2px solid #525252;
+    border-left: 2px solid #525252;
+    border-top: none;
+    border-bottom: none;
+  }
+  #talent-1 .sprite {
+    width: 4.4vh;
+    height: 4.4vh;
+    margin: 0.3vh;
+  }
+  #talent-1 .level {
+    width: 5vh;
+    height: 5vh;
+  }
+  #talent-1:hover .next {
+    border-right: 2px solid #525252;
+    border-left: 2px solid #525252;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  #talent-2 {
+    flex-direction: column;
+  }
+  #talent-2 .name {
+    font-size: 1vh;
+    width: 10vh;
+    height: 1vh;
+    padding: 1vh 0;
+    text-align: center;
+  }
+  #talent-2 .path {
+    width: 5vh;
+    height: 55vh;
+  }
+  #talent-2 .progress-bar {
+    height: 10.6vh;
+    width: 1vh;
+    border-right: 2px solid #1a1a1a;
+    border-left: 2px solid #1a1a1a;
+    border-top: none;
+    border-bottom: none;
+    top: 0;
+    right: -1.8vh;
+  }
+  #talent-2 .progress-bar.highlighted {
+    border-right: 2px solid #525252;
+    border-left: 2px solid #525252;
+    border-top: none;
+    border-bottom: none;
+  }
+  #talent-2 .sprite {
+    width: 4.4vh;
+    height: 4.4vh;
+    margin: 0.3vh;
+  }
+  #talent-2 .level {
+    width: 5vh;
+    height: 5vh;
+  }
+  #talent-2:hover .next {
+    border-right: 2px solid #525252;
+    border-left: 2px solid #525252;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  #points {
+    width: 15vh;
+    height: 4vh;
+    padding: 1vh 0 2vh 0;
+    border-radius: 0.2vh;
+    margin: 1vh;
+  }
+  #points .spent {
+    font-size: 2vh;
+  }
+  #points .label {
+    font-size: 2vh;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
 %highlight {
   background: rgba(70, 70, 70, 0.796);
-  border-bottom: 2px solid rgb(82, 82, 82);
-  border-top: 2px solid rgb(82, 82, 82);
+  border-bottom: $light-border;
+  border-top: $light-border;
 }
 
 %progress-bar {
@@ -12,8 +12,8 @@
   top: -2vw;
   z-index: 2;
   background: rgba(33, 33, 33, 0.762);
-  border-top: 2px solid $dark-grey;
-  border-bottom: 2px solid $dark-grey;
+  border-top: $dark-border;
+  border-bottom: $dark-border;
   &.highlighted {
     @extend %highlight;
   }
