@@ -1,0 +1,60 @@
+@mixin spritePosX($pos) {
+  .sprite {
+    background-position-x: $pos;
+  }
+}
+
+@mixin spritePosY($pos) {
+  .sprite {
+    background-position-y: $pos;
+  }
+}
+
+@mixin talent($sprite1, $sprite2, $sprite3, $sprite4) {
+  @include spritePosY(100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  .name {
+    font-size: 1vw;
+    width: 10vw;
+    height: 1vh;
+  }
+  .path {
+    width: $path-width;
+    height: $level-size;
+  }
+  .progress-bar {
+    @extend %progress-bar;
+  }
+  &:hover {
+    .next {
+      @extend %highlight;
+    }
+  }
+  .sprite {
+    @extend %sprite;
+  }
+  .level {
+    @extend %level;
+  }
+  .one {
+    @include spritePosX($sprite1);
+  }
+  .two {
+    @include spritePosX($sprite2);
+  }
+  .three {
+    @include spritePosX($sprite3);
+  }
+  .four {
+    @include spritePosX($sprite4);
+  }
+  .selected {
+    @include spritePosY(0%);
+    background: $spriteBoarderGradientSelected;
+    box-shadow: 0 0 5px $sky-blue;
+  }
+}

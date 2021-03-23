@@ -11,7 +11,7 @@ const TalentPath = (props) => {
   } = props;
   const talentLevels = ['one', 'two', 'three', 'four'];
   return (
-    <div className={`talent-${talentNum}`}>
+    <div id={`talent-${talentNum}`}>
       <div className="name">{`TALENT PATH ${talentNum}`}</div>
       <div className="path">
         {talentLevels.map((num, i) => {
@@ -29,10 +29,10 @@ const TalentPath = (props) => {
           );
           const barName =
             i + 1 < points
-              ? `progress-${num} highlighted`
+              ? `progress-bar highlighted`
               : i + 1 === points && pointsSpent < 6
-              ? `progress-${num} next`
-              : `progress-${num}`;
+              ? `progress-bar next`
+              : `progress-bar`;
 
           return i + 1 < 4 ? (
             <>

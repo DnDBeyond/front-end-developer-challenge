@@ -1,0 +1,44 @@
+%highlight {
+  background: rgba(70, 70, 70, 0.796);
+  border-bottom: 2px solid rgb(82, 82, 82);
+  border-top: 2px solid rgb(82, 82, 82);
+}
+
+%progress-bar {
+  width: ($path-width - $level-size * 4 - 3vw)/3;
+  height: 1vw;
+  display: inline-block;
+  position: relative;
+  top: -2vw;
+  z-index: 2;
+  background: rgba(33, 33, 33, 0.762);
+  border-top: 2px solid $dark-grey;
+  border-bottom: 2px solid $dark-grey;
+  &.highlighted {
+    @extend %highlight;
+  }
+}
+%sprite {
+  width: 4.4vw;
+  height: 4.4vw;
+  background-image: url(./assets/talent-icons-sprite.png);
+  background-size: 800%;
+  margin: 0.3vw;
+  position: relative;
+  z-index: 10;
+  &:hover {
+    background-position-y: 0px;
+    cursor: pointer;
+  }
+}
+
+%level {
+  content: '';
+  width: $level-size;
+  height: $level-size;
+  background: $spriteBoarderGradient;
+  z-index: 5;
+  position: relative;
+  display: inline-block;
+  border: 1px solid $mid-grey;
+}
