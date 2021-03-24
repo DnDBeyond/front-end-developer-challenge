@@ -1,15 +1,18 @@
+//next two select proper image from sprite sheet
+//arg = x or y position of sprite (% preferred)
 @mixin spritePosX($pos) {
   .sprite {
     background-position-x: $pos;
   }
 }
-
 @mixin spritePosY($pos) {
   .sprite {
     background-position-y: $pos;
   }
 }
 
+//styling for both talent paths
+//args = x position of each image in sprite sheet (% preferred)
 @mixin talent($sprite1, $sprite2, $sprite3, $sprite4) {
   @include spritePosY(100%);
   display: flex;
@@ -30,7 +33,7 @@
     @extend %progress-bar;
   }
   &:hover {
-    .next {
+    .progress-bar.next {
       @extend %highlight;
     }
   }

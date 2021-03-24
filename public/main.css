@@ -1,4 +1,4 @@
-#talent-2:hover .next, #talent-1:hover .next, #talent-2 .highlighted.progress-bar, #talent-1 .highlighted.progress-bar {
+#talent-2:hover .progress-bar.next, #talent-1:hover .progress-bar.next, #talent-2 .highlighted.progress-bar, #talent-1 .highlighted.progress-bar {
   background: rgba(70, 70, 70, 0.796);
   border-bottom: 2px solid #525252;
   border-top: 2px solid #525252;
@@ -15,6 +15,17 @@
   border-top: 2px solid #1a1a1a;
   border-bottom: 2px solid #1a1a1a;
 }
+#talent-2 .level, #talent-1 .level {
+  content: "";
+  width: 5vw;
+  height: 5vw;
+  background: linear-gradient(#525252 50%, #3a3f44 50% 52%, #525252);
+  z-index: 5;
+  position: relative;
+  display: inline-block;
+  border: 1px solid #414141;
+}
+
 #talent-2 .sprite, #talent-1 .sprite {
   width: 4.4vw;
   height: 4.4vw;
@@ -29,29 +40,25 @@
   cursor: pointer;
 }
 
-#talent-2 .level, #talent-1 .level {
-  content: "";
-  width: 5vw;
-  height: 5vw;
-  background: linear-gradient(#525252 50%, #3a3f44 50% 52%, #525252);
-  z-index: 5;
-  position: relative;
-  display: inline-block;
-  border: 1px solid #414141;
-}
-
 * {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   color: #e6e5e5;
 }
 
+body {
+  background-color: black;
+}
+
 #app {
   width: 100vw;
   height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
   min-height: 40vw;
+  min-width: 40vh;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
-  background-color: black;
 }
 
 #main {

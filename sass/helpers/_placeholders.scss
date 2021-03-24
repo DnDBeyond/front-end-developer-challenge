@@ -1,9 +1,11 @@
+//styling for progress-bar when highlighted
 %highlight {
   background: rgba(70, 70, 70, 0.796);
   border-bottom: $light-border;
   border-top: $light-border;
 }
 
+//bars between talent levels
 %progress-bar {
   width: ($path-width - $level-size * 4 - 3vw)/3;
   height: 1vw;
@@ -18,20 +20,8 @@
     @extend %highlight;
   }
 }
-%sprite {
-  width: 4.4vw;
-  height: 4.4vw;
-  background-image: url(./assets/talent-icons-sprite.png);
-  background-size: 800%;
-  margin: 0.3vw;
-  position: relative;
-  z-index: 10;
-  &:hover {
-    background-position-y: 0px;
-    cursor: pointer;
-  }
-}
 
+//divs holding sprites, appear as gradient "border"
 %level {
   content: '';
   width: $level-size;
@@ -41,4 +31,19 @@
   position: relative;
   display: inline-block;
   border: 1px solid $mid-grey;
+}
+
+//images for talent levels
+%sprite {
+  width: 4.4vw;
+  height: 4.4vw;
+  background-image: url(./assets/talent-icons-sprite.png);
+  background-size: 800%;
+  margin: 0.3vw;
+  position: relative;
+  z-index: 10;
+  &:hover {
+    background-position-y: 0px; //switches to white version of sprite
+    cursor: pointer;
+  }
 }

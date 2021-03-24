@@ -8,15 +8,24 @@
   color: rgb(230, 229, 229);
 }
 
-#app {
-  width: 100vw;
-  height: 100vh;
-  min-height: 40vw;
-  display: flex;
-  justify-content: space-evenly;
+body {
   background-color: black;
 }
 
+//div holding #main
+#app {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 40vw;
+  min-width: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+//div holding #title, #paths, and #points
 #main {
   background-image: url(./assets/talent-calc-bg.png);
   width: 93vw;
@@ -42,6 +51,7 @@
   border-radius: 0.2vw;
 }
 
+//div holding both talent paths
 #paths {
   height: 25vw;
   display: flex;
@@ -49,6 +59,7 @@
   flex-direction: column;
 }
 
+//Both talent divs hold their respective name and path
 #talent-1 {
   @include talent(0%, 14.3%, 28.7%, 43%);
 }
@@ -57,6 +68,7 @@
   @include talent(57.3%, 71.7%, 86%, 100%);
 }
 
+//display showing total points spent
 #points {
   width: 15vw;
   height: 4vw;
