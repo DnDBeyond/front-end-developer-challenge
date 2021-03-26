@@ -6,7 +6,7 @@ Below are specific requirements we have which cannot be adequately expressed thr
 
 If you feel that you have a personal project that closely resembles this project, send us the repo and we’ll evaluate that project instead. Only your contributions will be evaluated and the project must demonstrate the following competencies with:
 - Making an app mobile-friendly/responsive
-- Using SCSS
+- Creating and utilizing modern styling
 - Creating a stateful JS application
 
 ## Assessment expectations
@@ -18,9 +18,7 @@ Code reviewers will be directed to pay special attention to the following:
 - Code organisation and maintainability
 - If a JS framework is used, are that libraries best practices followed
 - Any novel, or additional features beyond the given scope
-- You may not use any existing SCSS (SASS), LESS, or CSS frameworks.
-  - You may use a style reset, or normalize if you wish.
-- You must use SCSS (SASS) to demonstrate competency with the language.
+- You may utilize SCSS/LESS/CSS Modules/CSS-in-JS to create necessary styles, but please avoid utilizing any frameworks or libraries that are already styled. (You may utilize a reset or normalize file if you would like)
 
 ## Rune Mastery Loadout Talent Calculator 9000
 Players of TitanStar Legends can spend talent points that they’ve collected on runes within a tree. We need to write a js application that simulates the rune tree within the game so players can replicate their in-game loadouts to share with the TitanStar Legends community.
