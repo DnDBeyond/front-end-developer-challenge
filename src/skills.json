@@ -1,0 +1,54 @@
+{
+  "Talent Path 1": [
+    {
+      "title": "Talent 1",
+      "description": "Talent 1 description",
+      "spriteX": 0,
+      "active": false
+    },
+    {
+      "title": "Talent 2",
+      "description": "Talent 2 description",
+      "spriteX": 1,
+      "active": false
+    },
+    {
+      "title": "Talent 3",
+      "description": "Talent 3 description",
+      "spriteX": 2,
+      "active": false
+    },
+    {
+      "title": "Talent 4",
+      "description": "Talent 4 description",
+      "spriteX": 3,
+      "active": false
+    }
+  ],
+  "Talent Path 2": [
+    {
+      "title": "Talent 5",
+      "description": "Talent 5 description",
+      "spriteX": 4,
+      "active": false
+    },
+    {
+      "title": "Talent 6",
+      "description": "Talent 6 description",
+      "spriteX": 5,
+      "active": false
+    },
+    {
+      "title": "Talent 7",
+      "description": "Talent 7 description",
+      "spriteX": 6,
+      "active": false
+    },
+    {
+      "title": "Talent 8",
+      "description": "Talent 8 description",
+      "spriteX": 7,
+      "active": false
+    }
+  ]
+}

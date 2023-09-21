@@ -1,0 +1,59 @@
+@import '../Variables.scss';
+
+.popup {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("/talent-calc-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 0.25rem 0 rgba($primary, 0.2);
+  border: 1px solid $border;
+  min-width: 1055px;
+  min-height: 373px;
+  @include bp($large){
+    min-width: 100%;
+    min-height: 100%;
+    padding: 0;
+    width: 100%;
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+    min-height: max-content;
+    color: $white;
+    text-align: center;
+    background-color: $tertiary;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    @include bp($large){
+      font-size: 1.5rem;
+      padding: 1rem 0.5rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: max-content;
+    margin: auto;
+    @include bp($large){
+      margin: 0;
+      padding: 0.5rem;
+      margin-bottom: 7rem;
+    }
+  }
+}
