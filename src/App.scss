@@ -20,6 +20,7 @@ body {
 }
 
 #root {
+  overflow: hidden;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -49,32 +50,50 @@ body {
 }
 
 .skill-points-counter {
-  background-color: $black;
-  margin: auto;
+  background-color: rgba($tertiary, 0.5);
+  border: 1px solid rgba($secondary, 0.25);
+  margin: 0;
   min-width: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.5rem;
   font-size: 1.6rem;
   font-weight: 500;
+  width: 100%;
+  max-width: 160px;
+  box-shadow: 0 0.5rem 1rem rgba($black, 0.5);
   p {
     margin: 0;
+    transition: $global-transition;
+    
     &:nth-of-type(2) {
-      font-size: 1em;
+      font-size: 0.74em;
       font-weight: 300;
       color: rgba($primary, .5);
+    }
+
+    &.is-max {
+      color: rgba(#FF0000, 0.75);
     }
   }
 
   @include bp($large){
+    background-color: rgba($tertiary, 1);
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-top: 1px solid rgba($secondary, 0.5);
     font-size: 1.2rem;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: 0;
     z-index: 5;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
   }
 }

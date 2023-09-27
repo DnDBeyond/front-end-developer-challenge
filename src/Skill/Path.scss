@@ -2,13 +2,41 @@
 
 @keyframes completedPathGlowingEffect {
   0% {
-    box-shadow: 0 0 0.5rem 0 rgba($primary, 1);
+    box-shadow: 0 0 1rem 0 rgba($primary, 1);
   }
   50% {
-    box-shadow: 0 0 .75rem 0 rgba(lighten($primary, 10%), .75);
+    box-shadow: 0 0 .5rem 0 rgba($white, .75);
   }
   100% {
-    box-shadow: 0 0 0.5rem 0 rgba($primary, 1);
+    box-shadow: 0 0 1rem 0 rgba($primary, 1);
+  }
+}
+
+@keyframes starsMoving {
+  0% {
+    opacity: 1;
+    background-position: left;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    background-position: right;
+  }
+}
+
+@keyframes starsMovingMobile {
+  0% {
+    opacity: 1;
+    background-position: center bottom;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    background-position: center top;
   }
 }
 
@@ -20,6 +48,7 @@
   gap: 3rem;
   @include bp($large){
     flex-direction: column;
+    gap: 1rem;
   }
 
   &__title {
@@ -28,6 +57,9 @@
     font-weight: 700;
     letter-spacing: 0.1ch;
     color: $light;
+    @include bp($large){
+      font-size: .8rem;
+    }
   }
   
   &__path {
@@ -37,6 +69,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 7rem;
+    filter: drop-shadow(0 1rem 1.5rem rgba($black, 1));
     @include bp($large){
       flex-direction: column;
     }
@@ -44,6 +77,7 @@
     & > .skill-button {
       &:not(:last-of-type) {
         position: relative;
+        transition: $global-transition;
         
         &::after {
           pointer-events: none;
@@ -80,12 +114,53 @@
 
     &.is-completed {
       & > .skill-button {
+        animation: infinite completedPathGlowingEffect 2s ease-in-out;
+
         &::after {
           opacity: 1 !important;
           border-top: 1px solid $primary;
           border-bottom: 1px solid $primary;
           background-color: rgba($primary, 0.5);
           animation: infinite completedPathGlowingEffect 2s ease-in-out;
+          @include bp($large){
+            border-top: none;
+            border-bottom: none;
+            border-left: 1px solid $primary;
+            border-right: 1px solid $primary;
+          }
+        }
+        &:not(:last-of-type) {
+          &::before {
+            opacity: 1;
+            content: '';
+            display: block;
+            width: 200%;
+            height: 70%;
+            background-image: url(/shiny.gif);
+            background-size: contain;
+            background-repeat: repeat;
+            background-position: left center;
+            z-index: 999;
+            position: absolute;
+            left: 100%;
+            opacity: 1;
+            animation: starsMoving 1s linear infinite;
+            filter: blur(0.6px) grayscale(1);
+            @include bp($large){
+              width: 70%;
+              height: 200%;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 100%;
+              margin: 0 auto;
+              opacity: 1;
+              background-size: contain;
+              background-position: center bottom;
+              animation: starsMovingMobile 1s linear infinite;
+              filter: blur(0.5px) grayscale(1);
+            }
+          }
         }
       }
     }

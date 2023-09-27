@@ -1,22 +1,30 @@
 import config from '../config.json'
 import './Button.scss';
+import blockingSound from '../assets/sounds/cant.wav'
 
 const Button = (props) => {
 
+  const playBlockingSound = () => {
+    const audio = new Audio(blockingSound)
+    audio.play()
+  }
+
   const handleLeftClick = () => {
-    if (props.spentPoints !== props.index || props.allSpentPoints === config.maxPoints) return
-    const newRunes = [...props.runes]
-    newRunes[props.index].active = true
-    props.setRunes(newRunes)
+    if (props.spentPoints !== props.index || props.allSpentPoints === config.maxPoints) {
+
+      playBlockingSound()
+      return
+    }
+    props.updateSkillInPaths(true, props.pathIndex, props.index)
   }
   
   const handleRightClick = (e) => {
     e.preventDefault()
-    if (props.spentPoints !== props.index + 1 || props.allSpentPoints === 0) return
-
-    const newRunes = [...props.runes]
-    newRunes[props.index].active = false
-    props.setRunes(newRunes)
+    if (props.spentPoints !== props.index + 1 || props.allSpentPoints === 0) {
+      playBlockingSound()
+      return
+    }
+    props.updateSkillInPaths(false, props.pathIndex, props.index)
   }
 
   return (

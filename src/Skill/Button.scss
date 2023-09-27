@@ -13,6 +13,10 @@
   transition: $global-transition;
   cursor: pointer;
   z-index: 1;
+  
+  &:not(:first-of-type) {
+    filter: brightness(0.5);
+  }
 
   &__img {
     position: absolute;
@@ -45,6 +49,10 @@
 
     #{$this}__img--active {
       opacity: 1;
+    }
+
+    & + #{$this} {
+      filter: brightness(1);
     }
   }
 

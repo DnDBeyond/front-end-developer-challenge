@@ -7,20 +7,14 @@ const Path = ({
   skills,
   allSpentPoints,
   setAllSpentPoints,
-  paths,
-  setPaths
+  updateSkillInPaths,
+  pathIndex,
 }) => {
   const [runes, setRunes] = useState(skills)
   const [spentPoints, setSpentPoints] = useState(0)
 
   useEffect(() => {
     setSpentPoints(runes.filter(rune => rune.active).length)
-    
-    setTimeout(() => {
-      setAllSpentPoints(
-        document.querySelectorAll('.skill-button.is-active').length
-      )
-    }, 250)
   }, [runes])
 
   return (
@@ -34,6 +28,8 @@ const Path = ({
                 <Button
                   key={`${name}-${index}`}
                   {...{
+                    pathIndex,
+                    updateSkillInPaths,
                     skill,
                     index,
                     allSpentPoints,
