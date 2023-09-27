@@ -1,0 +1,66 @@
+@import "../Variables.scss";
+
+.skill-button {
+  $this: &;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  background-image: linear-gradient(to bottom, $secondary 0%, $secondary 55%, #424447 55%, $secondary 100%);
+  transition: $global-transition;
+  cursor: pointer;
+  z-index: 1;
+  
+  &:not(:first-of-type) {
+    filter: brightness(0.5);
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    background-image: url("/talent-icons-sprite.png");
+    background-position-x: 0;
+    transition: $global-transition;
+    transform-origin: center;
+    transform: scale(1.12);
+    
+    &--unactive {
+      background-position-y: 50px;
+      z-index: 2;
+    }
+  
+    &--active {
+      opacity: 0;
+      background-position-y: 0;
+      z-index: 3;
+    }
+  }
+
+  &.is-active {
+    background-image: linear-gradient(to bottom, $primary 0%, $primary 55%, #424447 55%, $primary 100%);
+    box-shadow: 0 0 0.5rem 0 $primary;
+    transition: $global-transition, box-shadow 0s ease-in-out;
+
+    #{$this}__img--active {
+      opacity: 1;
+    }
+
+    & + #{$this} {
+      filter: brightness(1);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0.5rem 0 $secondary;
+
+    #{$this}__img--active {
+      opacity: 1;
+    }
+  }
+}
